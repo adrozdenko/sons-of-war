@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta name="robots" content="noindex,nofollow" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Сини Війни — ГО/БФ · ветеранський рух, виховання молоді, підтримка захисників</title>
+<meta name="description" content="ГО/БФ «Сини Війни» (Житомирщина) — ветеранський корпус, військово-патріотичне виховання молоді, спорт, реабілітація «РУХ» та просвіта. «Прийдуть військові — наведуть лад». Долучайся або стань партнером." />
+<meta name="author" content="ГО/БФ «Сини Війни»" />
+<meta name="theme-color" content="#0a0908" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="uk_UA" />
+<meta property="og:site_name" content="Сини Війни" />
+<meta property="og:title" content="Сини Війни — ГО/БФ · ветеранський рух" />
+<meta property="og:description" content="Прийдуть військові — наведуть лад. Ветеранський рух, виховання молоді та підтримка захисників України." />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   SONS OF WAR — rebuild from sonsofwar.mssg.me
+   Tactical "field-ops" aesthetic · ember/steel · real assets
+   ============================================================ */
+:root{
+  --bg:#0a0908; --bg-1:#100e0c; --bg-2:#15120f;
+  --text:#f5f3f0;
+  --muted:rgba(245,243,240,.74);
+  --faint:rgba(245,243,240,.5);
+  --ghost:rgba(245,243,240,.3);
+  --ember:#e2562a; --ember-2:#f0653a; --rust:#9c3a1d;
+  --steel:#9a9d9f; --gold:#c9a96a;
+  --line:rgba(245,240,235,.10); --line-2:rgba(245,240,235,.18);
+  --display:'Oswald',system-ui,sans-serif;
+  --body:'Manrope',system-ui,sans-serif;
+  --mono:'Space Mono',ui-monospace,monospace;
+  --maxw:1280px; --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.6;
+  background:
+    radial-gradient(115% 75% at 80% -5%, rgba(226,86,42,.18), transparent 55%),
+    radial-gradient(80% 60% at -5% 105%, rgba(156,58,29,.10), transparent 55%),
+    linear-gradient(transparent 0 calc(100% - 1px), var(--line) 100%) 0 0/100% 70px,
+    linear-gradient(90deg, transparent 0 calc(100% - 1px), var(--line) 100%) 0 0/70px 100%;}
+body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.045;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");}
+img.topo-bg{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;opacity:.50;pointer-events:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;z-index:1}
+section{position:relative;z-index:1}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--ember-2);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-999px;top:8px;z-index:200;background:var(--ember);color:#0a0908;
+  padding:10px 16px;font:700 13px/1 var(--mono);border-radius:4px}
+.skip:focus{left:16px}
+
+.mono{font-family:var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.eyebrow{font:400 11px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
+  display:inline-flex;align-items:center;gap:13px}
+.eyebrow::before{content:"";width:30px;height:2px;background:var(--ember)}
+
+/* emblem hexagon (Ветеранський корпус mark) */
+.hexmark{width:38px;height:38px;display:block;filter:drop-shadow(0 0 9px rgba(226,86,42,.5))}
+.hexmark path{fill:var(--ember)}
+.logo-mark{width:42px;height:42px;display:block;border-radius:50%;object-fit:cover;
+  filter:drop-shadow(0 0 11px rgba(226,86,42,.45))}
+
+/* HEADER */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;justify-content:space-between;
+  gap:24px;padding:16px 28px;background:linear-gradient(180deg,rgba(10,9,8,.94),rgba(10,9,8,.35) 70%,transparent);
+  backdrop-filter:blur(6px);border-bottom:1px solid transparent;transition:.3s var(--ease)}
+header.nav.solid{background:rgba(9,8,7,.95);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:700;font-size:19px;
+  letter-spacing:.16em;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font:400 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+  transition:color .2s;padding:6px 0;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--ember);transition:width .25s var(--ease)}
+.nav-links a:hover{color:var(--text)}.nav-links a:hover::after{width:100%}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.btn{font:700 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border:1px solid var(--line-2);
+  background:rgba(0,0,0,.4);color:var(--text);padding:13px 20px;border-radius:6px;transition:.2s var(--ease);
+  display:inline-flex;align-items:center;gap:9px}
+.btn:hover{background:rgba(255,255,255,.05);transform:translateY(-1px)}
+.btn-primary{border-color:rgba(226,86,42,.55);color:#fff;
+  background:linear-gradient(180deg,var(--ember),var(--rust));box-shadow:0 8px 26px -10px rgba(226,86,42,.8)}
+.btn-primary:hover{background:linear-gradient(180deg,var(--ember-2),var(--ember));border-color:var(--ember-2)}
+.btn-ghost{background:transparent;border-color:transparent;color:var(--muted);padding:13px 6px}
+.btn-ghost:hover{color:var(--text)}
+.hamburger{display:none;width:46px;height:46px;border-radius:8px;border:1px solid var(--line);background:rgba(0,0,0,.5);
+  cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.hamburger span{width:20px;height:2px;background:var(--text);transition:.25s}
+
+/* HERO */
+.hero{min-height:100svh;display:flex;align-items:center;padding:120px 0 70px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;width:100%}
+.hero h1{font-family:var(--display);font-weight:700;text-transform:uppercase;line-height:1.05;letter-spacing:-.005em;
+  margin:34px 0 0;font-size:clamp(46px,6.6vw,104px)}
+.hero h1 .l1{color:var(--text);display:block}
+.hero h1 .l2{color:var(--ember);display:block;text-shadow:0 0 60px rgba(226,86,42,.5)}
+.hero .wecame{display:inline-flex;align-items:center;gap:12px;margin-top:20px;font:700 14px/1 var(--mono);
+  letter-spacing:.18em;text-transform:uppercase;color:var(--ember-2)}
+.hero .wecame::before{content:"";width:28px;height:2px;background:var(--ember)}
+.hero .lede{max-width:540px;color:var(--muted);font-size:clamp(15px,1.4vw,17px);margin:26px 0 0}
+.hero .lede b{color:var(--text);font-weight:700}
+.hero-cta{display:flex;gap:13px;flex-wrap:wrap;margin-top:34px}
+.hero-cta .btn{padding:16px 26px}
+/* medallion feature */
+.medallion{position:relative;justify-self:center;width:min(440px,100%)}
+.medallion .frame{position:relative;border:1px solid var(--line-2);border-radius:16px;overflow:hidden;
+  box-shadow:0 40px 90px -30px rgba(0,0,0,.9),0 0 0 1px rgba(226,86,42,.08);background:#0c0a09}
+.medallion .frame img{width:100%;height:auto;display:block;transition:transform 8s var(--ease)}
+.medallion:hover .frame img{transform:scale(1.05)}
+.medallion .frame::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 42%, transparent 38%, rgba(10,9,8,.5) 100%);pointer-events:none}
+.medallion .ring{position:absolute;inset:-14px;border:1px dashed rgba(226,86,42,.3);border-radius:24px;
+  animation:spin 60s linear infinite;pointer-events:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.medallion .tagchip{position:absolute;left:14px;bottom:14px;z-index:2;font:400 10px/1 var(--mono);letter-spacing:.18em;
+  text-transform:uppercase;color:var(--text);background:rgba(10,9,8,.78);border:1px solid var(--line-2);
+  border-radius:20px;padding:8px 13px;backdrop-filter:blur(4px)}
+.medallion .corner{position:absolute;width:18px;height:18px;border:2px solid var(--ember);z-index:2;opacity:.8}
+.medallion .c1{top:-2px;left:-2px;border-right:0;border-bottom:0}
+.medallion .c2{top:-2px;right:-2px;border-left:0;border-bottom:0}
+.medallion .c3{bottom:-2px;left:-2px;border-right:0;border-top:0}
+.medallion .c4{bottom:-2px;right:-2px;border-left:0;border-top:0}
+.scrollcue{display:flex;align-items:center;gap:10px;margin-top:44px;font:400 10px/1 var(--mono);
+  letter-spacing:.28em;color:var(--ghost);text-transform:uppercase}
+.scrollcue .ar{animation:bob 1.8s infinite}@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+/* STATS */
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:50px 0;background:rgba(0,0,0,.2)}
+.stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.stat{text-align:center}
+.stat .n{font-family:var(--display);font-weight:700;font-size:clamp(40px,5vw,70px);line-height:1;
+  background:linear-gradient(180deg,#fff,rgba(255,255,255,.4));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .l{font:400 11px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:13px}
+
+/* SECTION */
+.sec{padding:92px 0}
+.sec-head{max-width:760px;margin-bottom:50px}
+.sec-head h2{font-family:var(--display);font-weight:700;text-transform:uppercase;line-height:1.02;
+  font-size:clamp(32px,4.6vw,60px);margin:16px 0 0}
+.sec-head h2 .accent{color:var(--ember)}
+.sec-head p{color:var(--muted);margin-top:18px;font-size:16.5px;max-width:640px}
+
+/* PROGRAMS */
+/* PROGRAMS — Operations Board (HUD grid + topo route + animated backdrop) */
+.ops-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0;transition:opacity .8s ease}
+.ops-canvas.live{opacity:1}
+.programs{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;z-index:1}
+.programs.reveal{opacity:1;transform:none}            /* container stays; panels self-reveal */
+.prog-route{position:absolute;left:-2%;top:-46px;width:104%;height:calc(100% + 92px);z-index:0;pointer-events:none;overflow:visible}
+.prog-route path{fill:none;stroke:var(--ember);stroke-width:1.2;vector-effect:non-scaling-stroke;opacity:.3;
+  stroke-dasharray:2600;stroke-dashoffset:2600;transition:stroke-dashoffset 1.6s var(--ease)}
+.programs.in .prog-route path{stroke-dashoffset:0}
+.programs.in .prog-route path:nth-child(2){transition-delay:.18s}
+.programs.in .prog-route path:nth-child(3){transition-delay:.36s}
+.prog{position:relative;z-index:1;background:rgba(16,14,12,.92);border:1px solid var(--line);border-radius:10px;
+  padding:28px 24px 26px;min-height:286px;display:flex;flex-direction:column;gap:14px;overflow:hidden;
+  opacity:0;transform:translateY(18px) scale(.985);
+  transition:opacity .6s var(--ease),transform .6s var(--ease),border-color .25s var(--ease);transition-delay:var(--d,0ms)}
+.programs.in .prog{opacity:1;transform:none}
+.prog:hover,.prog:focus-within{border-color:rgba(226,86,42,.4)}
+/* HUD corner brackets */
+.prog::before{content:"";position:absolute;inset:9px;pointer-events:none;opacity:.4;transition:opacity .25s var(--ease);
+  background:
+    linear-gradient(var(--ember),var(--ember)) left top/13px 2px no-repeat,
+    linear-gradient(var(--ember),var(--ember)) left top/2px 13px no-repeat,
+    linear-gradient(var(--ember),var(--ember)) right top/13px 2px no-repeat,
+    linear-gradient(var(--ember),var(--ember)) right top/2px 13px no-repeat,
+    linear-gradient(var(--ember),var(--ember)) left bottom/13px 2px no-repeat,
+    linear-gradient(var(--ember),var(--ember)) left bottom/2px 13px no-repeat,
+    linear-gradient(var(--ember),var(--ember)) right bottom/13px 2px no-repeat,
+    linear-gradient(var(--ember),var(--ember)) right bottom/2px 13px no-repeat}
+.prog:hover::before,.prog:focus-within::before{opacity:.92}
+/* one-shot scan-line on reveal */
+.prog::after{content:"";position:absolute;left:0;right:0;top:0;height:42%;pointer-events:none;opacity:0;transform:translateY(-110%);
+  background:linear-gradient(180deg,transparent,rgba(240,101,58,.16) 60%,rgba(240,101,58,.55));mix-blend-mode:screen}
+.programs.in .prog::after{animation:scan 1.05s var(--ease) forwards;animation-delay:calc(var(--d,0ms) + .12s)}
+@keyframes scan{0%{opacity:0;transform:translateY(-70%)}12%{opacity:1}100%{opacity:0;transform:translateY(255%)}}
+.prog .top{display:flex;align-items:flex-start;justify-content:space-between}
+.prog .ico-box{width:46px;height:46px;border:1px solid var(--line-2);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--ember);background:rgba(10,9,8,.4)}
+.prog .ico{width:24px;height:24px}
+.prog .num{font:700 13px/1 var(--mono);color:var(--ghost);letter-spacing:.1em}
+.prog h3{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:19px;letter-spacing:.01em;line-height:1.15;padding-bottom:13px;position:relative;margin-top:2px}
+.prog h3::after{content:"";position:absolute;left:0;bottom:0;width:30px;height:2px;background:var(--ember)}
+.prog ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.prog li{font:400 10.5px/1 var(--mono);color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:6px 10px;text-transform:uppercase;letter-spacing:.02em}
+.prog p{color:var(--muted);font-size:13.5px;line-height:1.55;margin-top:auto;padding-top:6px}
+
+/* split feature (mission/team) with photo */
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.feature .ph{position:relative;min-height:420px;background:#0c0a09}
+.feature .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:82% center;
+  filter:grayscale(.35) contrast(1.08) brightness(.92)}
+.feature .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 45%,rgba(16,14,12,.96)),
+  linear-gradient(0deg,rgba(16,14,12,.65),transparent 55%)}
+.feature .tx.right ~ .ph img,.feature .ph:first-child img{object-position:78% center}
+.feature .ph .phcar{position:absolute;inset:0}
+.feature .ph .phcar img{opacity:0;transition:opacity 1.4s var(--ease)}
+.feature .ph .phcar img.on{opacity:1}
+.feature .tx{padding:50px 46px;display:flex;flex-direction:column;justify-content:center;background:var(--bg-1)}
+.feature .tx.right{order:2}
+.feature .lead{font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:clamp(22px,2.6vw,34px);line-height:1.12}
+.feature .lead em{color:var(--ember);font-style:normal}
+.rolelist{list-style:none;display:flex;flex-direction:column;gap:0;margin-top:26px;border-top:1px solid var(--line)}
+.rolelist li{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.rolelist li .k{font:700 11px/1 var(--mono);color:var(--ember);min-width:26px}
+.build{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:8px}
+.build div{background:var(--bg-1);padding:16px 20px;display:flex;align-items:center;gap:15px;font-size:14.5px}
+.build div .k{font:700 12px/1 var(--mono);color:var(--ember);min-width:28px}
+
+/* GALLERY (real photos, photo-side cropped) */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gcard{position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;aspect-ratio:4/3;background:#0c0a09}
+.gcard img{width:100%;height:100%;object-fit:cover;object-position:85% center;filter:grayscale(.6) contrast(1.05) brightness(.72);
+  transition:.5s var(--ease)}
+.gcard:hover img{filter:grayscale(.1) contrast(1.05) brightness(.95);transform:scale(1.06)}
+.gcard::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(0deg,rgba(10,9,8,.82),transparent 60%),linear-gradient(90deg,rgba(10,9,8,.5),transparent 42%)}
+.gcard .cap{position:absolute;left:12px;bottom:11px;z-index:2;font:400 10px/1.3 var(--mono);letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text)}
+.gcard .cap b{color:var(--ember);display:block;font-weight:700;margin-bottom:3px}
+.gcard.clean img{object-position:center;filter:grayscale(.2) contrast(1.04) brightness(.96)}
+.gcard.clean:hover img{filter:grayscale(0) contrast(1.04) brightness(1)}
+
+/* PHOTO GALLERY + LIGHTBOX */
+.photogrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gtile{position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;aspect-ratio:4/3;background:#0c0a09;cursor:pointer;padding:0;display:block;width:100%;font-family:inherit}
+.gtile img{width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(.32) contrast(1.04) brightness(.9);transition:.45s var(--ease)}
+.gtile:hover img,.gtile:focus-visible img{filter:grayscale(0) contrast(1.04) brightness(1);transform:scale(1.05)}
+.gtile::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,9,8,.72),transparent 52%);pointer-events:none}
+.gtile .cap{position:absolute;left:11px;right:34px;bottom:9px;z-index:2;font:500 10.5px/1.3 var(--mono);letter-spacing:.03em;text-transform:uppercase;color:var(--text);text-align:left}
+.gtile .zoom{position:absolute;top:9px;right:9px;z-index:2;width:26px;height:26px;border-radius:6px;background:rgba(10,9,8,.55);border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;opacity:0;transition:.2s;color:var(--text)}
+.gtile:hover .zoom,.gtile:focus-visible .zoom{opacity:1}
+.gtile .zoom svg{width:13px;height:13px}
+.gpager{display:flex;justify-content:center;align-items:center;gap:7px;margin-top:26px;flex-wrap:wrap}
+.gpg{min-width:38px;height:38px;padding:0 11px;border:1px solid var(--line-2);background:var(--bg-1);color:var(--muted);
+  font:600 13px/1 var(--mono);border-radius:8px;cursor:pointer;transition:.2s var(--ease)}
+.gpg:hover:not(:disabled){border-color:var(--ember);color:var(--text)}
+.gpg.cur{background:var(--ember);border-color:var(--ember);color:#fff}
+.gpg:disabled{opacity:.32;cursor:default}
+
+.lb{position:fixed;inset:0;z-index:120;background:rgba(6,5,5,.95);backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:.3s;padding:40px}
+.lb.open{opacity:1;visibility:visible}
+.lb-fig{max-width:min(1080px,90vw);display:flex;flex-direction:column;align-items:flex-start}
+.lb-img{max-width:100%;max-height:76vh;border:1px solid var(--line-2);border-radius:8px;object-fit:contain;background:#0c0a09;align-self:center}
+.lb-meta{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;width:100%;margin-top:16px;flex-wrap:wrap}
+.lb-cap{font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:clamp(15px,1.9vw,21px);letter-spacing:.02em;line-height:1.15}
+.lb-sub{font:400 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-top:7px}
+.lb-ig{display:inline-flex;align-items:center;gap:9px;font:700 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--text);border:1px solid var(--line-2);border-radius:8px;padding:12px 16px;transition:.2s;white-space:nowrap}
+.lb-ig:hover{border-color:var(--ember);background:rgba(226,86,42,.12)}
+.lb-ig svg{width:15px;height:15px}
+.lb-btn{position:fixed;top:50%;transform:translateY(-50%);width:50px;height:50px;border-radius:50%;background:rgba(20,16,14,.82);border:1px solid var(--line-2);color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;z-index:121}
+.lb-btn:hover{border-color:var(--ember);background:rgba(226,86,42,.22)}
+.lb-prev{left:24px}.lb-next{right:24px}
+.lb-close{position:fixed;top:22px;right:24px;width:44px;height:44px;border-radius:8px;background:rgba(20,16,14,.82);border:1px solid var(--line-2);color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:121;transition:.2s}
+.lb-close:hover{border-color:var(--ember);color:var(--ember)}
+.lb-count{position:fixed;top:30px;left:28px;z-index:121;font:400 12px/1 var(--mono);letter-spacing:.12em;color:var(--faint)}
+.lb-btn svg,.lb-close svg{width:20px;height:20px}
+@media(max-width:1000px){.photogrid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:680px){.photogrid{grid-template-columns:repeat(2,1fr)}.lb{padding:14px}.lb-prev{left:6px}.lb-next{right:6px}.lb-btn{width:42px;height:42px}}
+
+/* NEEDS / DONATE band */
+.needs{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.needs .l{padding:50px 46px;background:var(--bg-1)}
+.needs .l h3{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(26px,3.4vw,42px);line-height:1.03}
+.needs .l p{color:var(--muted);margin:16px 0 26px;max-width:420px}
+.needchips{display:flex;flex-wrap:wrap;gap:9px}
+.needchips span{font:400 11px/1 var(--mono);text-transform:uppercase;color:var(--muted);border:1px solid var(--line-2);
+  border-radius:22px;padding:9px 13px}
+.needs .r{padding:50px 44px;display:flex;flex-direction:column;justify-content:center;gap:20px;position:relative;
+  background:linear-gradient(135deg,rgba(226,86,42,.16),transparent 60%),rgba(0,0,0,.35);border-left:1px solid var(--line)}
+.needs .r .kicker{font:400 11px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--ember-2)}
+.needs .r h4{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:26px;line-height:1.05}
+.needs .r .help{display:flex;flex-direction:column;gap:11px;margin-top:4px}
+.needs .r .help div{display:flex;align-items:center;gap:12px;color:var(--text);font-size:14.5px}
+.needs .r .help svg{width:17px;height:17px;color:var(--ember);flex-shrink:0}
+.needs .r .donrow{display:flex;gap:11px;flex-wrap:wrap;margin-top:8px}
+.donqr{display:flex;gap:16px;align-items:center;border:1px solid var(--line-2);border-radius:12px;padding:14px;background:rgba(0,0,0,.3)}
+.donqr img{width:188px;height:auto;border-radius:8px;flex-shrink:0}
+.donqr .t{font-size:13px;color:var(--muted);line-height:1.55}
+@media(max-width:560px){.donqr{flex-direction:column;align-items:center;text-align:center}.donqr img{width:100%;max-width:260px}}
+
+/* CTA band */
+.ctaband{border:1px solid var(--line);border-radius:16px;padding:56px 40px;text-align:center;
+  background:radial-gradient(120% 140% at 50% -20%,rgba(226,86,42,.18),transparent 60%),var(--bg-1)}
+.ctaband h2{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(30px,4.4vw,56px);line-height:1.02}
+.ctaband p{color:var(--muted);max-width:540px;margin:16px auto 28px}
+.ctaband .row{display:flex;gap:13px;justify-content:center;flex-wrap:wrap}
+
+/* DIRECTOR */
+.director{display:grid;grid-template-columns:.82fr 1.18fr;gap:0;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.director .ph{position:relative;min-height:520px;background:#0c0a09}
+.director .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 16%;filter:grayscale(.2) contrast(1.05)}
+.director .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,14,12,.88),transparent 42%)}
+.director .ph .badge{position:absolute;left:22px;bottom:22px;z-index:2}
+.director .ph .badge .nm{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:23px;line-height:1.05}
+.director .ph .badge .cs{font:400 11px/1 var(--mono);letter-spacing:.16em;color:var(--ember-2);text-transform:uppercase;margin-top:7px;display:inline-block}
+.director .tx{padding:44px;background:var(--bg-1);display:flex;flex-direction:column;justify-content:center}
+.director .tx .role{font:700 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ember);margin-bottom:18px}
+.director .quote{font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:clamp(18px,1.9vw,23px);line-height:1.22;border-left:2px solid var(--ember);padding-left:16px;margin-bottom:20px}
+.director .bio p{color:var(--muted);font-size:14px;margin-bottom:11px;line-height:1.6}
+.director .bio p b{color:var(--text);font-weight:600}
+
+/* ORG / PROJECT CARDS */
+.orgs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.org{border:1px solid var(--line);border-radius:12px;background:var(--bg-1);display:flex;flex-direction:column;transition:.25s var(--ease);overflow:hidden}
+.org:hover{background:var(--bg-2);border-color:var(--line-2)}
+.org .banner{aspect-ratio:5/2;background:#0c0a09;overflow:hidden;position:relative;border-bottom:1px solid var(--line)}
+.org .banner img{width:100%;height:100%;object-fit:cover;object-position:center;transition:.45s var(--ease)}
+.org:hover .banner img{transform:scale(1.045)}
+.org .obody{padding:22px 26px 24px;display:flex;flex-direction:column;gap:11px;flex:1}
+.org .oh{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.org .tag{font:700 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ember);border:1px solid rgba(226,86,42,.4);border-radius:20px;padding:6px 10px;white-space:nowrap}
+.org h3{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:20px;letter-spacing:.01em}
+.org p{color:var(--muted);font-size:13.5px;line-height:1.55}
+.org .links{display:flex;gap:9px;margin-top:auto;flex-wrap:wrap;padding-top:4px}
+.org .links a{display:inline-flex;align-items:center;gap:7px;font:400 11px/1 var(--mono);color:var(--muted);border:1px solid var(--line-2);border-radius:7px;padding:8px 11px;transition:.2s}
+.org .links a:hover{border-color:var(--ember);color:var(--text);background:rgba(226,86,42,.08)}
+.org .links a svg{width:14px;height:14px}
+
+/* PARTNERS */
+.partners-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.partner{border:1px solid var(--line);border-radius:12px;background:var(--bg-1);display:flex;flex-direction:column;transition:.2s;overflow:hidden}
+.partner:hover{background:var(--bg-2)}
+.partner .banner{aspect-ratio:3/2;background:#0c0a09;overflow:hidden;position:relative;border-bottom:1px solid var(--line)}
+.partner .banner img{width:100%;height:100%;object-fit:cover;object-position:center;transition:.45s var(--ease)}
+.partner:hover .banner img{transform:scale(1.045)}
+.partner .pbody{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.partner .pt{font:700 10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.partner h4{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:18px}
+.partner p{color:var(--muted);font-size:13px;line-height:1.5}
+.partner .pc{font:400 12px/1 var(--mono);color:var(--muted);margin-top:auto;padding-top:6px}
+.partner .pc a{color:var(--muted)}.partner .pc a:hover{color:var(--ember)}
+
+/* STAKEHOLDER LOGO WALL */
+.logowall{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.logocell{position:relative;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent),var(--bg-1);aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;padding:18px;transition:.25s var(--ease)}
+.logocell:hover{border-color:rgba(226,86,42,.4);background:var(--bg-2);transform:translateY(-3px)}
+.logocell img{max-height:84px;max-width:92%;width:auto;height:auto;object-fit:contain;opacity:.85;transition:opacity .3s var(--ease)}
+.logocell.host img{max-height:116px;max-width:90%;opacity:.95}   /* color host emblem, optically larger */
+.logocell:hover img{opacity:1}
+@media(max-width:1000px){.logowall{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.logowall{grid-template-columns:repeat(2,1fr)}}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:66px 0 28px;margin-top:40px;position:relative;overflow:hidden}
+.footwm{position:absolute;bottom:-3.2vw;left:50%;transform:translateX(-50%);font-family:var(--display);font-weight:700;
+  font-size:17vw;line-height:1;color:rgba(245,240,235,.022);text-transform:uppercase;white-space:nowrap;pointer-events:none;z-index:0}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr .85fr 1.1fr;gap:40px;position:relative;z-index:1}
+.req{font:400 12px/1.95 var(--mono);color:var(--muted);letter-spacing:.02em}
+.req b{color:var(--text);font-weight:400}
+.foot-brand .brand{margin-bottom:18px}
+.foot-brand p{color:var(--muted);max-width:320px;font-size:14.5px}
+.foot-soc{display:flex;gap:10px;margin-top:20px}
+.foot-soc a{width:42px;height:42px;border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;
+  justify-content:center;color:var(--muted);transition:.2s}
+.foot-soc a:hover{border-color:var(--ember);color:var(--text);background:rgba(226,86,42,.1)}
+.foot-col h4{font:400 11px/1 var(--mono);letter-spacing:.18em;color:var(--ember);text-transform:uppercase;margin-bottom:18px;
+  display:flex;align-items:center;gap:9px}
+.foot-col h4::before{content:"";width:14px;height:2px;background:var(--ember)}
+.contact-line{display:flex;align-items:center;gap:13px;padding:10px 0;color:var(--text);font-size:15px;transition:.2s}
+.contact-line:hover{color:var(--ember)}
+.contact-line svg{width:18px;height:18px;color:var(--muted);flex-shrink:0}
+.contact-line:hover svg{color:var(--ember)}
+.foot-col .navlist a{display:block;padding:8px 0;color:var(--muted);font-size:14.5px;transition:.2s}
+.foot-col .navlist a:hover{color:var(--ember)}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-top:50px;padding-top:24px;
+  border-top:1px solid var(--line);font:400 11px/1.6 var(--mono);letter-spacing:.06em;color:var(--faint);
+  text-transform:uppercase;position:relative;z-index:1}
+
+/* MODAL (join / contact) */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.66);backdrop-filter:blur(3px);z-index:100;opacity:0;visibility:hidden;transition:.3s}
+.scrim.open{opacity:1;visibility:visible}
+.modal{position:fixed;top:50%;left:50%;transform:translate(-50%,-46%);z-index:101;width:min(500px,92vw);
+  max-height:90svh;overflow-y:auto;background:linear-gradient(180deg,#13100e,#0c0a09);border:1px solid var(--line-2);
+  border-radius:16px;opacity:0;visibility:hidden;transition:.35s var(--ease);box-shadow:0 50px 120px -40px #000}
+.modal.open{opacity:1;visibility:visible;transform:translate(-50%,-50%)}
+.modal-head{padding:26px 30px 0;display:flex;align-items:flex-start;justify-content:space-between}
+.modal-head .eyebrow{margin-bottom:0}
+.modal h3{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:28px;margin-top:12px;line-height:1}
+.icon-btn{width:38px;height:38px;border:1px solid var(--line);border-radius:7px;background:rgba(0,0,0,.4);color:var(--muted);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;flex-shrink:0}
+.icon-btn:hover{border-color:var(--ember);color:var(--text)}
+.modal-body{padding:22px 30px 30px}
+.modal h3+p,.modal-head+.modal-body>.sub{color:var(--muted)}
+.modal .sub{color:var(--muted);font-size:14px;margin:14px 30px 0}
+.f{margin-top:20px}
+.f label{display:block;font:400 10px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:9px}
+.f label .req-star{color:var(--ember)}
+.inp,select.inp,textarea.inp{width:100%;background:rgba(255,255,255,.03);border:1px solid var(--line-2);border-radius:9px;
+  padding:14px 15px;color:var(--text);font-family:var(--body);font-size:15px;transition:.2s}
+.inp::placeholder{color:var(--ghost)}
+.inp:focus{outline:none;border-color:var(--ember);background:rgba(226,86,42,.06)}
+.inp[aria-invalid="true"]{border-color:var(--ember-2);background:rgba(226,86,42,.09)}
+textarea.inp{resize:vertical;min-height:84px}
+.role-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.roleopt{border:1px solid var(--line-2);border-radius:9px;padding:13px 14px;cursor:pointer;background:rgba(255,255,255,.02);
+  transition:.2s;display:flex;align-items:center;gap:10px;font-family:var(--body)}
+.roleopt:hover{border-color:rgba(226,86,42,.5)}
+.roleopt.sel{border-color:var(--ember);background:rgba(226,86,42,.1)}
+.roleopt .dot{width:13px;height:13px;border-radius:50%;border:1.5px solid var(--line-2);flex-shrink:0;position:relative}
+.roleopt.sel .dot{border-color:var(--ember)}
+.roleopt.sel .dot::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--ember)}
+.roleopt .rl{font-size:13.5px;color:var(--text)}
+.phone{display:flex}
+.phone .pre{display:flex;align-items:center;padding:0 15px;border:1px solid var(--line-2);border-right:0;border-radius:9px 0 0 9px;
+  background:rgba(255,255,255,.04);color:var(--muted);font-family:var(--mono);font-size:14px}
+.phone .inp{border-radius:0 9px 9px 0}
+.err{display:none;align-items:center;gap:7px;margin-top:8px;font:600 12px/1.3 var(--body);color:var(--ember-2)}
+.err.show{display:flex}.err svg{width:14px;height:14px;flex-shrink:0}
+.consent{display:flex;gap:13px;align-items:flex-start;cursor:pointer;margin-top:20px}
+.consent input{appearance:none;-webkit-appearance:none;width:23px;height:23px;flex-shrink:0;margin-top:1px;
+  border:1.5px solid var(--line-2);border-radius:6px;background:rgba(0,0,0,.4);cursor:pointer;position:relative;transition:.2s}
+.consent input:checked{background:var(--ember);border-color:var(--ember)}
+.consent input:checked::after{content:"";position:absolute;left:8px;top:4px;width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.consent span{font-size:12.5px;color:var(--muted);line-height:1.5}
+.consent a{color:var(--ember);text-decoration:underline}
+.submit{width:100%;margin-top:24px;border:1px solid rgba(226,86,42,.55);border-radius:10px;cursor:pointer;
+  background:linear-gradient(180deg,var(--ember),var(--rust));color:#fff;padding:17px;font:700 13px/1 var(--mono);
+  letter-spacing:.18em;text-transform:uppercase;transition:.2s;display:flex;align-items:center;justify-content:center;gap:11px}
+.submit:hover{background:linear-gradient(180deg,var(--ember-2),var(--ember))}
+.done{display:none;flex-direction:column;align-items:center;text-align:center;gap:16px;padding:30px 10px 16px}
+.done.show{display:flex}
+.done .ring{width:72px;height:72px;border-radius:50%;border:2px solid var(--ember);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 30px -6px rgba(226,86,42,.8)}
+.done .ring svg{width:34px;height:34px;color:var(--ember)}
+.done h3{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:24px}
+.done p{color:var(--muted);max-width:300px;font-size:14px}
+
+/* mobile menu */
+.mobile-menu{position:fixed;inset:0;z-index:95;background:linear-gradient(160deg,#141009,#0a0908);
+  display:flex;flex-direction:column;padding:88px 28px 40px;opacity:0;visibility:hidden;transition:.3s}
+.mobile-menu.open{opacity:1;visibility:visible}
+.mobile-menu .mlabel{font:400 10px/1 var(--mono);letter-spacing:.28em;color:var(--ghost);text-transform:uppercase}
+.mobile-menu a.mlink{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:38px;line-height:1.18;
+  color:var(--text);padding:7px 0;border-bottom:1px solid var(--line)}
+.mobile-menu .mactions{margin-top:auto;display:flex;flex-direction:column;gap:11px}
+.mobile-menu .btn{justify-content:center;padding:18px}
+
+.reveal{opacity:0;transform:translateY(22px)}
+.reveal.in{opacity:1;transform:none;transition:opacity .7s var(--ease),transform .7s var(--ease)}
+
+@media(max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .medallion{max-width:360px}
+  .programs{grid-template-columns:repeat(2,1fr)}
+  .feature,.needs,.director{grid-template-columns:1fr}
+  .feature .ph{min-height:280px}.feature .tx.right{order:0}
+  .director .ph{min-height:360px}
+  .orgs{grid-template-columns:1fr}.partners-grid{grid-template-columns:repeat(2,1fr)}
+  .needs .r{border-left:0;border-top:1px solid var(--line)}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:38px}
+}
+@media(max-width:760px){
+  .nav-links,.nav-actions{display:none}.hamburger{display:flex}
+  header.nav{padding:13px 20px}.wrap{padding:0 20px}
+  .stats .grid{grid-template-columns:repeat(2,1fr);gap:30px}
+  .programs,.partners-grid{grid-template-columns:1fr}.sec{padding:64px 0}.prog{min-height:0}
+  .hero{padding:110px 0 50px}
+  .feature .tx,.needs .l,.needs .r,.ctaband{padding:32px 22px}
+  .foot-grid{grid-template-columns:1fr}.foot-bottom{flex-direction:column}
+  .role-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Перейти до основного вмісту</a>
+<img class="topo-bg" src="assets/topo.svg" alt="" aria-hidden="true" />
+
+<header class="nav" id="topnav">
+  <a class="brand" href="#" aria-label="Сини Війни — на головну">
+    <img class="logo-mark" src="assets/logo-emblem.png" alt="Емблема ГО «Сини Війни»" width="42" height="42" />
+    Сини Війни
+  </a>
+  <nav class="nav-links" aria-label="Головна навігація">
+    <a href="#about">Про нас</a>
+    <a href="#programs">Напрямки</a>
+    <a href="#director">Керівник</a>
+    <a href="#projects">Проєкти</a>
+    <a href="#support">Партнерам</a>
+    <a href="#contacts">Контакти</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="btn btn-primary" type="button" data-open="donate">Донат</button>
+    <button class="btn btn-ghost" type="button" data-open="join">Долучитися</button>
+  </div>
+  <button class="hamburger" type="button" aria-label="Відкрити меню" aria-expanded="false" id="hamb"><span></span><span></span><span></span></button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Меню навігації">
+  <div class="mlabel">Навігація // SOW · Житомирщина</div>
+  <div style="margin-top:28px;display:flex;flex-direction:column">
+    <a class="mlink" href="#about">Про нас</a>
+    <a class="mlink" href="#programs">Напрямки</a>
+    <a class="mlink" href="#director">Керівник</a>
+    <a class="mlink" href="#projects">Проєкти</a>
+    <a class="mlink" href="#support">Партнерам</a>
+    <a class="mlink" href="#contacts">Контакти</a>
+  </div>
+  <div class="mactions">
+    <button class="btn btn-primary" type="button" data-open="donate">Підтримати донатом</button>
+    <button class="btn" type="button" data-open="join">Долучитися</button>
+  </div>
+</div>
+
+<main id="main">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow reveal">ГО/БФ «Сини Війни» · Житомирщина // EST. 2025</span>
+        <h1 class="reveal" style="transition-delay:.06s">
+          <span class="l1">Прийдуть</span>
+          <span class="l1">військові —</span>
+          <span class="l2">наведуть лад</span>
+        </h1>
+        <div class="wecame reveal" style="transition-delay:.14s">…ми прийшли</div>
+        <p class="lede reveal" style="transition-delay:.2s">
+          <b>Громадська організація та благодійний фонд.</b> Ветеранський корпус, військово-патріотичне
+          виховання молоді, фізична і просвітницька підготовка. Будуємо середовище дисципліни, сили та відповідальності.
+        </p>
+        <div class="hero-cta reveal" style="transition-delay:.26s">
+          <button class="btn btn-primary" type="button" data-open="join">Долучитися до руху →</button>
+          <button class="btn" type="button" data-open="donate">Стати партнером</button>
+        </div>
+        <div class="scrollcue reveal" style="transition-delay:.34s"><span class="ar">↓</span> Гортай нижче</div>
+      </div>
+      <div class="medallion reveal" style="transition-delay:.18s">
+        <span class="ring"></span>
+        <div class="frame">
+          <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+          <img src="assets/IMG_8524.png" alt="Емблема ГО «Сини Війни» — срібний медальйон з черепом і написом «Громадська організація · Сини Війни»" width="750" height="836" />
+          <span class="tagchip">◉ Сини Війни · Ветеранський корпус</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap">
+    <div class="grid">
+      <div class="stat"><div class="n">8</div><div class="l">Напрямків діяльності</div></div>
+      <div class="stat"><div class="n">4</div><div class="l">Спільноти-партнери</div></div>
+      <div class="stat"><div class="n">2025</div><div class="l">Рік заснування</div></div>
+      <div class="stat"><div class="n">ГО/БФ</div><div class="l">Організація + фонд</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / MISSION feature -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="feature reveal">
+      <div class="ph"><div class="phcar" id="misscar">
+        <img src="assets/mission/1.jpg" class="on" style="object-position:center 20%" alt="Спільнота однодумців ГО «Сини Війни»" />
+        <img src="assets/mission/2.jpg" style="object-position:center 26%" alt="Розвиток молоді — учасники Центурії" loading="lazy" />
+        <img src="assets/mission/3.jpg" style="object-position:center 30%" alt="Підтримка ветеранів на заході Мінветеранів" loading="lazy" />
+        <img src="assets/mission/4.jpg" style="object-position:center 42%" alt="Тренування та польова підготовка" loading="lazy" />
+      </div></div>
+      <div class="tx right">
+        <span class="eyebrow">// Наша мета</span>
+        <p class="lead" style="margin-top:16px">Створити потужний <em>молодіжний</em> та <em>ветеранський</em> рух — спільноту однодумців, що змінює країну.</p>
+        <div class="build">
+          <div><span class="k">01</span> Простір для тренувань</div>
+          <div><span class="k">02</span> Освітній осередок</div>
+          <div><span class="k">03</span> Платформа для розвитку молоді</div>
+          <div><span class="k">04</span> Центр підтримки ветеранів</div>
+          <div><span class="k">05</span> Спільнота однодумців</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="sec" id="programs" style="padding-top:20px;overflow:hidden">
+  <canvas class="ops-canvas" id="opsCanvas" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">// Напрямки діяльності</span>
+      <h2>Що ми <span class="accent">будуємо</span></h2>
+      <p>Єдине середовище дисципліни, сили та відповідальності — від виховання молоді до повернення ветеранів до активного життя.</p>
+    </div>
+    <div class="programs reveal" role="list">
+      <svg class="prog-route" viewBox="0 0 1200 700" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M-20 175 C 210 95, 350 250, 600 165 S 1010 80, 1220 205" />
+        <path d="M-20 385 C 250 325, 430 470, 650 380 S 980 300, 1220 415" />
+        <path d="M-20 565 C 180 520, 390 605, 600 540 S 1010 470, 1220 560" />
+      </svg>
+      <article class="prog" role="listitem" style="--d:0ms">
+        <div class="top"><span class="ico-box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l9 4-9 4-9-4 9-4zM5 10v5c0 2 3.5 4 7 4s7-2 7-4v-5"/></svg></span><span class="num">01</span></div>
+        <h3>Центурія</h3>
+        <ul><li>Молодіжне виховання</li><li>Військово-патріотичний</li><li>Спорт</li><li>Просвіта</li></ul>
+        <p>Осередок, що поєднує виховання, спорт і просвіту. Створюємо середовище дисципліни, сили та відповідальності.</p>
+      </article>
+      <article class="prog" role="listitem" style="--d:80ms">
+        <div class="top"><span class="ico-box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg></span><span class="num">02</span></div>
+        <h3>Ветеранський корпус</h3>
+        <ul><li>Юридична</li><li>Психологічна</li><li>Фізична</li><li>Фінансова</li><li>Навчання</li><li>Працевлаштування</li></ul>
+        <p>Повний супровід ветеранів та сімей. Мета — повернення до активного життя.</p>
+      </article>
+      <article class="prog" role="listitem" style="--d:160ms">
+        <div class="top"><span class="ico-box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="6"/><path d="M9 14l-1.5 7L12 18l4.5 3L15 14"/></svg></span><span class="num">03</span></div>
+        <h3>«РУХ» — мультиспорт</h3>
+        <ul><li>Бокс</li><li>Пауерліфтинг</li><li>Веслування</li><li>Стрільба з лука</li></ul>
+        <p>Мультиспортивні змагання для військових і ветеранів. Спорт як інструмент реабілітації з тренерами світового класу.</p>
+      </article>
+      <article class="prog" role="listitem" style="--d:240ms">
+        <div class="top"><span class="ico-box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.2"/><path d="M12 1.6v4.3M12 18.1v4.3M1.6 12h4.3M18.1 12h4.3"/></svg></span><span class="num">04</span></div>
+        <h3>Військово-патріотична підготовка</h3>
+        <ul><li>Тактика</li><li>Медицина</li><li>Топографія</li><li>Страйкбол</li><li>Виживання</li><li>БПЛА / НРК</li></ul>
+        <p>Базові навички та дисципліна: полігони, польові виходи, військово-технологічний спорт.</p>
+      </article>
+      <article class="prog" role="listitem" style="--d:320ms">
+        <div class="top"><span class="ico-box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 9v6M7.5 6.5v11M16.5 6.5v11M20 9v6M7.5 12h9"/></svg></span><span class="num">05</span></div>
+        <h3>Фізичний розвиток</h3>
+        <ul><li>Бокс</li><li>ММА</li><li>Боротьба</li><li>Ножовий бій</li></ul>
+        <p>Регулярні тренування протягом тижня. Сила, витривалість, контроль.</p>
+      </article>
+      <article class="prog" role="listitem" style="--d:400ms">
+        <div class="top"><span class="ico-box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v14H4zM8 9h8M8 13h6"/></svg></span><span class="num">06</span></div>
+        <h3>Просвітницька діяльність</h3>
+        <ul><li>Лекції та гутірки</li><li>Історія України</li><li>Рідний край</li><li>Київська Русь</li><li>Сучасна війна</li></ul>
+        <p>Формуємо національну свідомість і знання історії — від постатей до місць пам'яті.</p>
+      </article>
+      <article class="prog" role="listitem" style="--d:480ms">
+        <div class="top"><span class="ico-box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.9M16.7 13.4A5.5 5.5 0 0 1 20.5 19"/></svg></span><span class="num">07</span></div>
+        <h3>Дозвілля та спільнота</h3>
+        <ul><li>Походи Україною</li><li>Кіберспорт</li><li>Активні ігри</li><li>Відвідування матчів</li></ul>
+        <p>Формуємо справжнє братерство поза тренуваннями — спільні події, спорт і подорожі.</p>
+      </article>
+      <article class="prog" role="listitem" style="--d:560ms">
+        <div class="top"><span class="ico-box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span><span class="num">08</span></div>
+        <h3>Urban Chase Firm</h3>
+        <ul><li>Polissya Hooligans</li><li>Спортивний сектор</li><li>Братерство</li></ul>
+        <p>Не просто рух — філософія міста. Свобода в дії, дисципліна в хаосі. Поєднання молоді та ветеранів на секторі.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="sec" id="team" style="padding-top:20px">
+  <div class="wrap">
+    <div class="feature reveal">
+      <div class="tx">
+        <span class="eyebrow">// Наша команда</span>
+        <p class="lead" style="margin-top:16px">Ми працюємо для розвитку <em>сильної української спільноти</em>.</p>
+        <ul class="rolelist">
+          <li><span class="k">01</span> Керівники</li>
+          <li><span class="k">02</span> Координатори</li>
+          <li><span class="k">03</span> Інструктори</li>
+          <li><span class="k">04</span> Викладачі</li>
+          <li><span class="k">05</span> Волонтери</li>
+        </ul>
+        <div style="margin-top:24px"><a class="btn" href="#director">Познайомитися з керівником →</a></div>
+      </div>
+      <div class="ph"><div class="phcar" id="teamcar">
+        <img src="assets/team/1.jpg" class="on" style="object-position:center 22%" alt="Керівник напрямку ГО «Сини Війни»" />
+        <img src="assets/team/2.jpg" style="object-position:center 20%" alt="Інструктор команди" loading="lazy" />
+        <img src="assets/team/3.jpg" style="object-position:center 20%" alt="Координатор команди" loading="lazy" />
+        <img src="assets/team/4.jpg" style="object-position:center 24%" alt="Учасник команди «Сини Війни»" loading="lazy" />
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECTOR -->
+<section class="sec" id="director" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:34px">
+      <span class="eyebrow">// Керівник</span>
+      <h2>Хто стоїть <span class="accent">за рухом</span></h2>
+    </div>
+    <div class="director reveal">
+      <div class="ph">
+        <img src="assets/director.jpeg" alt="Петровський Андрій Ігорович — керівник ГО/БФ «Сини Війни»" loading="lazy" />
+        <div class="badge">
+          <span class="nm">Петровський<br>Андрій Ігорович</span>
+          <span class="cs">◉ Позивний «Одеса» · Member Sons of War MC</span>
+        </div>
+      </div>
+      <div class="tx">
+        <div class="role">// Керівник ГО/БФ «Сини Війни»</div>
+        <p class="quote">«Об'єднати людей, які не втратили здатності мріяти, діяти й створювати — сильних духом, із твердими цінностями та бажанням будувати майбутнє держави.»</p>
+        <div class="bio">
+          <p>До повномасштабного вторгнення — <b>підприємець</b>. У 2022–2023 роках служив кулеметником штурмового відділення 3-ї окремої штурмової бригади.</p>
+          <p>Під час бойового завдання в районі <b>Бахмута</b> отримав поранення; після шести місяців реабілітації — ІІ група інвалідності.</p>
+          <p>У 2024 році повернувся до строю. Нині служить Українському народу в <b>125-й окремій важкій механізованій бригаді</b>.</p>
+          <p>Саме тому було створено «Сини Війни» — спільноту, де кожен зможе реалізувати себе у важливій справі.</p>
+        </div>
+        <div style="margin-top:8px;display:flex;gap:12px;flex-wrap:wrap">
+          <button class="btn btn-primary" type="button" data-open="join" style="padding:14px 22px">Долучитися до руху →</button>
+          <a class="btn" href="https://www.instagram.com/odesa_code_name" target="_blank" rel="noopener noreferrer" style="padding:14px 22px">Особиста сторінка</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY / CHRONICLE -->
+<section class="sec" id="chronicle" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">// Хроніка</span>
+      <h2>Робота <span class="accent">в кадрах</span></h2>
+      <p>Тренування, збори, навчання, польові виходи та життя спільноти — понад 40 реальних кадрів діяльності організації. Натисніть на фото, щоб збільшити.</p>
+    </div>
+    <div class="photogrid reveal" id="photogrid"></div>
+    <nav class="gpager" id="gpager" aria-label="Сторінки галереї"></nav>
+  </div>
+</section>
+
+<!-- SOCIAL PROJECTS / ALLIED ORGS -->
+<section class="sec" id="projects" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">// Соціальні проєкти · стейкхолдери</span>
+      <h2>Спільноти, з якими <span class="accent">будуємо</span></h2>
+      <p>«Сини Війни» — це екосистема дружніх організацій Житомирщини: спорт, виховання, ветеранський рух і культура підтримки.</p>
+    </div>
+    <div class="orgs reveal">
+      <div class="org">
+        <div class="banner"><img src="assets/p-rukh.jpeg" alt="Логотип «РУХ» · Змагання трійки" loading="lazy" /></div>
+        <div class="obody">
+          <div class="oh"><h3>«РУХ» · Змагання трійки</h3><span class="tag">Мультиспорт</span></div>
+          <p>Мультиспортивні змагання для ветеранів і військових. Спорт як головний інструмент реабілітації та підтримки бійців.</p>
+          <div class="links">
+            <a href="https://www.instagram.com/rukh_competition" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> @rukh_competition</a>
+          </div>
+        </div>
+      </div>
+      <div class="org">
+        <div class="banner"><img src="assets/p-urbanchase.jpeg" alt="Логотип Urban Chase Firm" loading="lazy" /></div>
+        <div class="obody">
+          <div class="oh"><h3>Urban Chase Firm</h3><span class="tag">Polissya Hooligans</span></div>
+          <p>«Це не просто рух — це філософія міста.» Свобода в дії. Дисципліна в хаосі. Створюємо нову культуру на секторі.</p>
+          <div class="links">
+            <a href="https://www.instagram.com/urban.chase.firm" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> @urban.chase.firm</a>
+            <a href="https://t.me/+ZQVZmxKG-sY0MTBi" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3.3 15.6c-.25 1.1-.9 1.37-1.83.85l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.14L17.4 6.4c.4-.36-.09-.56-.63-.2L6.5 12.6l-4.6-1.44c-1-.31-1.02-1 .21-1.48L20.6 2.9c.83-.31 1.56.2 1.3 1.4z"/></svg> Telegram</a>
+          </div>
+        </div>
+      </div>
+      <div class="org">
+        <div class="banner"><img src="assets/p-centuria.jpeg" alt="Логотип Centuria Zhytomyr Teren" loading="lazy" /></div>
+        <div class="obody">
+          <div class="oh"><h3>Centuria · Zhytomyr Teren</h3><span class="tag">Вишкіл</span></div>
+          <p>Новітня Організація Українських Націоналістів на засадах Української Державності. Тренування, ідеологія та вишколи.</p>
+          <div class="links">
+            <a href="https://www.instagram.com/centuria_zhytomyr_teren" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> @centuria_zhytomyr_teren</a>
+            <a href="https://t.me/centuria_zhytomyr_teren" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3.3 15.6c-.25 1.1-.9 1.37-1.83.85l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.14L17.4 6.4c.4-.36-.09-.56-.63-.2L6.5 12.6l-4.6-1.44c-1-.31-1.02-1 .21-1.48L20.6 2.9c.83-.31 1.56.2 1.3 1.4z"/></svg> Telegram</a>
+          </div>
+        </div>
+      </div>
+      <div class="org">
+        <div class="banner"><img src="assets/p-vetcorps.jpeg" alt="Логотип Ветеранський корпус Житомирщини" loading="lazy" /></div>
+        <div class="obody">
+          <div class="oh"><h3>Ветеранський корпус Житомирщини</h3><span class="tag">Ветерани</span></div>
+          <p>Об'єднання військових та ветеранів незалежно від підрозділу. Партнер «Синів Війни» за меморандумом про співпрацю.</p>
+          <div class="links">
+            <a href="https://www.instagram.com/veterans_corps_zhytomyr" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> @veterans_corps_zhytomyr</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMERCIAL PARTNERS -->
+<section class="sec" id="biz-partners" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">// Заклади · друзі · партнери</span>
+      <h2>Бізнеси, що <span class="accent">підтримують</span></h2>
+      <p>Партнери, які вже стали соціально активними разом із «Синами Війни» — через послуги, ресурси та програму «Донат з кожного чека».</p>
+    </div>
+    <div class="partners-grid reveal">
+      <div class="partner">
+        <div class="banner"><img src="assets/p-algiz.jpeg" alt="Логотип адвокатського об'єднання ALGIZ" loading="lazy" /></div>
+        <div class="pbody">
+          <span class="pt">Юридичні послуги</span>
+          <h4>АО «ALGIZ»</h4>
+          <p>Команда досвідчених адвокатів — надійний захист прав та законних інтересів осіб.</p>
+          <span class="pc"><a href="https://www.algiz.lawyer/" target="_blank" rel="noopener noreferrer">algiz.lawyer</a> · ☎ +380 68 621 58 32</span>
+        </div>
+      </div>
+      <div class="partner">
+        <div class="banner"><img src="assets/p-resursy.jpeg" alt="Логотип «Ресурси»" loading="lazy" /></div>
+        <div class="pbody">
+          <span class="pt">Гранти та фінанси</span>
+          <h4>«Ресурси»</h4>
+          <p>Фахівці з грантів: консультація, підбір, бізнес-план, написання та супровід проєкту.</p>
+          <span class="pc"><a href="tel:+380968336508">Фінрадник</a> · <a href="tel:+380935913206">Грантрайтер</a></span>
+        </div>
+      </div>
+      <div class="partner">
+        <div class="banner"><img src="assets/p-donchicho.jpeg" alt="Логотип Don Chicho 2.0" loading="lazy" /></div>
+        <div class="pbody">
+          <span class="pt">Заклад · донат з чека</span>
+          <h4>Don Chicho 2.0</h4>
+          <p>Шаурма, Житомир. Учасник програми «Донат з кожного чека» — соціально активний бізнес.</p>
+          <span class="pc"><a href="https://www.instagram.com/shaurma.don.chicho_2.0" target="_blank" rel="noopener noreferrer">@shaurma.don.chicho_2.0</a></span>
+        </div>
+      </div>
+      <div class="partner">
+        <div class="banner"><img src="assets/p-m113.jpeg" alt="Логотип M113 Coffee" loading="lazy" /></div>
+        <div class="pbody">
+          <span class="pt">Заклад · кава</span>
+          <h4>M113 Coffee</h4>
+          <p>Кав'ярня, Ізюм. Партнер руху та учасник соціальних ініціатив «Синів Війни».</p>
+          <span class="pc"><a href="https://www.instagram.com/m113.coffee" target="_blank" rel="noopener noreferrer">@m113.coffee</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAKEHOLDERS LOGO WALL -->
+<section class="sec" id="stakeholders" style="padding-top:10px">
+  <div class="wrap">
+    <div class="sec-head reveal" style="margin-bottom:34px">
+      <span class="eyebrow">// Екосистема · стейкхолдери</span>
+      <h2>Рух, який ми <span class="accent">творимо разом</span></h2>
+    </div>
+    <div class="logowall reveal">
+      <a class="logocell host" href="https://www.instagram.com/sonsofwar.ua" target="_blank" rel="noopener noreferrer" aria-label="ГО/БФ «Сини Війни»"><img src="assets/logo-emblem.png" alt="Логотип ГО/БФ «Сини Війни»" loading="lazy" /></a>
+      <a class="logocell" href="https://www.instagram.com/centuria_zhytomyr_teren" target="_blank" rel="noopener noreferrer" aria-label="Centuria Zhytomyr Teren"><img src="assets/logos/centuria-w.png" alt="Логотип Centuria Zhytomyr Teren" loading="lazy" /></a>
+      <a class="logocell" href="https://www.veterancorpus.army/" target="_blank" rel="noopener noreferrer" aria-label="Ветеранський Корпус"><img src="assets/logos/vetcorpus-w.png" alt="Логотип Ветеранський Корпус" loading="lazy" /></a>
+      <a class="logocell" href="https://www.instagram.com/urban.chase.firm" target="_blank" rel="noopener noreferrer" aria-label="Urban Chase Firm"><img src="assets/logos/urbanchase-w.png" alt="Логотип Urban Chase Firm" loading="lazy" /></a>
+      <a class="logocell" href="https://www.instagram.com/rukh_competition" target="_blank" rel="noopener noreferrer" aria-label="Змагання «РУХ»"><img src="assets/logos/rukh-w.png" alt="Логотип змагань РУХ" loading="lazy" /></a>
+    </div>
+  </div>
+</section>
+
+<!-- NEEDS / DONATE -->
+<section class="sec" id="support" style="padding-top:20px">
+  <div class="wrap">
+    <div class="needs reveal">
+      <div class="l">
+        <span class="eyebrow">// Що потрібно</span>
+        <h3 style="margin-top:14px">Основні потреби осередку</h3>
+        <p>Кожен внесок наближає відкриття повноцінного простору для молоді та ветеранів.</p>
+        <div class="needchips">
+          <span>Оренда приміщень</span><span>Ремонт і будівництво</span><span>Комунальні витрати</span>
+          <span>Спортивний інвентар</span><span>Тактичне спорядження</span><span>Обладнання БПЛА / НРК</span><span>Меблі та техніка</span><span>Транспортні витрати</span><span>Підтримка заходів</span>
+        </div>
+      </div>
+      <div class="r">
+        <span class="kicker">// Донат з кожного чека</span>
+        <h4>Ваш внесок<br>допомагає</h4>
+        <div class="help">
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Розвивати молодь</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Підтримувати ветеранів</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Відкривати нові осередки</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Проводити тренування</div>
+          <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg> Виховувати сильне покоління українців</div>
+        </div>
+        <div class="donqr">
+          <img src="assets/IMG_8718.jpeg" alt="QR-код для донату — програма «Донат з кожного чека»" loading="lazy" />
+          <div class="t"><b style="color:var(--ember-2)">1 грн з кожного чека</b> — на БФ «Сини Війни». Партнерська програма для бізнесу: ваш бізнес автоматично стає соціально активним. Скануй QR або звернись за деталями.</div>
+        </div>
+        <div class="donrow">
+          <button class="btn btn-primary" type="button" data-open="donate">Підтримати →</button>
+          <a class="btn" href="tel:+380637741960">Зателефонувати</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec" style="padding-top:10px">
+  <div class="wrap">
+    <div class="ctaband reveal">
+      <span class="eyebrow" style="justify-content:center">// Долучайся до братерства</span>
+      <h2 style="margin-top:16px">Стань частиною<br>Синів Війни</h2>
+      <p>Ветеран, чинний військовий, молодь, волонтер чи партнер — для кожного є місце в русі.</p>
+      <div class="row">
+        <button class="btn btn-primary" type="button" data-open="join" style="padding:16px 28px">Подати заявку</button>
+        <a class="btn" href="https://t.me/odesa_code_name" target="_blank" rel="noopener noreferrer" style="padding:16px 28px">Написати в Telegram</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer id="contacts">
+  <div class="footwm" aria-hidden="true">Сини Війни</div>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <img class="logo-mark" src="assets/logo-emblem.png" alt="Емблема ГО «Сини Війни»" width="42" height="42" />
+          Сини Війни
+        </div>
+        <p>«Прийдуть військові — наведуть лад». ГО/БФ «Сини Війни», Житомирщина. Ветеранський рух, виховання молоді та підтримка захисників України.</p>
+        <div class="foot-soc">
+          <a href="https://t.me/odesa_code_name" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3.3 15.6c-.25 1.1-.9 1.37-1.83.85l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.14L17.4 6.4c.4-.36-.09-.56-.63-.2L6.5 12.6l-4.6-1.44c-1-.31-1.02-1 .21-1.48L20.6 2.9c.83-.31 1.56.2 1.3 1.4z"/></svg></a>
+          <a href="https://www.instagram.com/sonsofwar.ua" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://wa.me/380637741960" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm5.3 13.8c-.2.6-1.2 1.2-1.7 1.2-.5.05-.5.4-3-1-2.6-1.3-4.2-4-4.3-4.2-.1-.2-1-1.3-1-2.5s.6-1.8.9-2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.6.2.4.9 1.4 1.9 2 .8.6 1.4.7 1.6.8.2.1.4 0 .5-.1l.7-.8c.2-.2.4-.2.6-.1l1.9.9c.2.1.4.2.4.3.1.2.1.7-.1 1.3z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Контакти</h4>
+        <a class="contact-line" href="tel:+380637741960"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg> 063 774 19 60</a>
+        <a class="contact-line" href="https://t.me/odesa_code_name" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3l-3.3 15.6c-.25 1.1-.9 1.37-1.83.85l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.14L17.4 6.4c.4-.36-.09-.56-.63-.2L6.5 12.6l-4.6-1.44c-1-.31-1.02-1 .21-1.48L20.6 2.9c.83-.31 1.56.2 1.3 1.4z"/></svg> Telegram · @odesa_code_name</a>
+        <a class="contact-line" href="https://www.instagram.com/sonsofwar.ua" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> Instagram · Сини Війни | ГО</a>
+        <a class="contact-line" href="https://wa.me/380637741960" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2z"/></svg> WhatsApp</a>
+      </div>
+      <div class="foot-col">
+        <h4>Розділи</h4>
+        <div class="navlist">
+          <a href="#about">Про нас / Місія</a>
+          <a href="#programs">Напрямки</a>
+          <a href="#director">Керівник</a>
+          <a href="#projects">Соціальні проєкти</a>
+          <a href="#biz-partners">Партнери</a>
+          <a href="#support">Підтримати</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Реквізити</h4>
+        <p class="req">
+          ГО ЄДРПОУ <b>45681080</b><br>
+          БФ ЄДРПОУ <b>45730838</b><br>
+          IBAN<br><b>UA40 3220 0100<br>0002 6001 7000 04106</b><br>
+          Банк <b>Monobank</b>
+        </p>
+        <a class="contact-line" href="https://t.me/SonsOfWar_UA_bot" target="_blank" rel="noopener noreferrer" style="margin-top:8px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg> Придбати мерч</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>○ © 2025–2026 ГО/БФ «Сини Війни» · Житомирщина. Усі права захищено.</span>
+      <span>Прийдуть військові — наведуть лад</span>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Перегляд фото">
+  <div class="lb-count" id="lbCount"></div>
+  <button class="lb-close" id="lbClose" type="button" aria-label="Закрити перегляд"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  <button class="lb-btn lb-prev" id="lbPrev" type="button" aria-label="Попереднє фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <button class="lb-btn lb-next" id="lbNext" type="button" aria-label="Наступне фото"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+  <figure class="lb-fig">
+    <img class="lb-img" id="lbImg" src="" alt="" />
+    <figcaption class="lb-meta">
+      <div>
+        <div class="lb-cap" id="lbCap"></div>
+        <div class="lb-sub" id="lbSub"></div>
+      </div>
+      <a class="lb-ig" id="lbIg" href="#" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> Дивитись в Instagram ↗</a>
+    </figcaption>
+  </figure>
+</div>
+
+<!-- MODAL -->
+<div class="scrim" id="scrim"></div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+  <div class="modal-head">
+    <div>
+      <span class="eyebrow" id="modalEyebrow">// Долучитися</span>
+      <h3 id="modalTitle">Стати частиною руху</h3>
+    </div>
+    <button class="icon-btn" id="closeBtn" type="button" aria-label="Закрити форму"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="modal-body">
+    <p class="sub" id="modalSub" style="margin:0 0 4px">Залиш контакти — координатор зв'яжеться з тобою найближчим часом.</p>
+    <form id="joinForm" novalidate>
+      <div class="f" id="roleField">
+        <label>Хто ти <span class="req-star" aria-hidden="true">*</span></label>
+        <div class="role-grid" role="radiogroup" aria-label="Оберіть статус">
+          <button type="button" class="roleopt" data-role="Ветеран"><span class="dot"></span><span class="rl">Ветеран</span></button>
+          <button type="button" class="roleopt" data-role="Військовослужбовець"><span class="dot"></span><span class="rl">Військовий</span></button>
+          <button type="button" class="roleopt" data-role="Молодь / Центуріон"><span class="dot"></span><span class="rl">Молодь</span></button>
+          <button type="button" class="roleopt" data-role="Волонтер"><span class="dot"></span><span class="rl">Волонтер</span></button>
+          <button type="button" class="roleopt" data-role="Партнер"><span class="dot"></span><span class="rl">Партнер</span></button>
+          <button type="button" class="roleopt" data-role="Інше"><span class="dot"></span><span class="rl">Інше</span></button>
+        </div>
+        <div class="err" id="err-role" role="alert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg> Оберіть, ким ви хочете долучитися.</div>
+      </div>
+      <div class="f">
+        <label for="jname">Ім'я <span class="req-star" aria-hidden="true">*</span></label>
+        <input class="inp" id="jname" name="name" type="text" autocomplete="name" placeholder="Андрій" aria-required="true" aria-describedby="err-name" />
+        <div class="err" id="err-name" role="alert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg> Вкажіть ваше ім'я.</div>
+      </div>
+      <div class="f">
+        <label for="jphone">Телефон <span class="req-star" aria-hidden="true">*</span></label>
+        <div class="phone">
+          <span class="pre">+380</span>
+          <input class="inp" id="jphone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" maxlength="9" placeholder="63 XXX XX XX" aria-required="true" aria-describedby="err-phone" />
+        </div>
+        <div class="err" id="err-phone" role="alert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg> Введіть 9 цифр номера (після +380).</div>
+      </div>
+      <div class="f" id="msgField">
+        <label for="jmsg">Повідомлення <span style="color:var(--ghost)">— за бажанням</span></label>
+        <textarea class="inp" id="jmsg" name="message" placeholder="Коротко про себе або ваш запит…"></textarea>
+      </div>
+      <label class="consent">
+        <input type="checkbox" id="jconsent" aria-required="true" aria-describedby="err-consent" />
+        <span>Надаю згоду ГО/БФ «Сини Війни» на обробку моїх контактних даних для зворотного зв'язку. <a href="#about">Детальніше</a></span>
+      </label>
+      <div class="err" id="err-consent" role="alert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg> Потрібна згода на обробку даних.</div>
+      <button class="submit" type="submit" id="submitBtn">Надіслати заявку <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </form>
+    <div class="done" id="doneState">
+      <div class="ring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <h3>Заявку надіслано</h3>
+      <p id="doneMsg">Дякуємо! Координатор зв'яжеться з вами найближчим часом.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var scrim=document.getElementById('scrim'), modal=document.getElementById('modal'),
+      closeBtn=document.getElementById('closeBtn'), form=document.getElementById('joinForm'),
+      doneState=document.getElementById('doneState'), lastFocus=null, chosenRole=null;
+
+  function openModal(kind){
+    lastFocus=document.activeElement;
+    chosenRole=null;
+    document.querySelectorAll('.roleopt').forEach(function(o){o.classList.remove('sel');o.setAttribute('aria-checked','false');});
+    form.reset(); form.style.display='block'; doneState.classList.remove('show');
+    document.querySelectorAll('.err').forEach(function(e){e.classList.remove('show');});
+    if(kind==='donate'){
+      document.getElementById('modalEyebrow').textContent='// Підтримати';
+      document.getElementById('modalTitle').textContent='Стати партнером';
+      document.getElementById('modalSub').textContent='Залиш контакти — ми надішлемо реквізити та деталі програми «Донат з кожного чека».';
+      document.getElementById('doneMsg').textContent='Дякуємо! Ми надішлемо реквізити та деталі партнерства.';
+      // preselect Партнер
+      var p=document.querySelector('.roleopt[data-role="Партнер"]'); if(p){p.classList.add('sel');p.setAttribute('aria-checked','true');chosenRole='Партнер';}
+    } else {
+      document.getElementById('modalEyebrow').textContent='// Долучитися';
+      document.getElementById('modalTitle').textContent='Стати частиною руху';
+      document.getElementById('modalSub').textContent="Залиш контакти — координатор зв'яжеться з тобою найближчим часом.";
+      document.getElementById('doneMsg').textContent="Дякуємо! Координатор зв'яжеться з вами найближчим часом.";
+    }
+    scrim.classList.add('open'); modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden'; closeMobile();
+    setTimeout(function(){ var f=document.querySelector('.roleopt:not(.sel)')||document.getElementById('jname'); f.focus(); },300);
+  }
+  function closeModal(){
+    scrim.classList.remove('open'); modal.classList.remove('open'); modal.setAttribute('aria-hidden','true');
+    document.body.style.overflow=''; if(lastFocus) lastFocus.focus();
+  }
+  function showErr(id,on){ var e=document.getElementById('err-'+id); if(e) e.classList.toggle('show',on);
+    var inp=document.getElementById('j'+id); if(inp) inp.setAttribute('aria-invalid',on?'true':'false'); }
+
+  document.querySelectorAll('.roleopt').forEach(function(o){
+    o.setAttribute('role','radio'); o.setAttribute('aria-checked','false');
+    function pick(){ document.querySelectorAll('.roleopt').forEach(function(x){x.classList.remove('sel');x.setAttribute('aria-checked','false');});
+      o.classList.add('sel'); o.setAttribute('aria-checked','true'); chosenRole=o.getAttribute('data-role');
+      document.getElementById('err-role').classList.remove('show'); }
+    o.addEventListener('click',pick);
+    o.addEventListener('keydown',function(e){ if(e.key===' '||e.key==='Enter'){e.preventDefault();pick();} });
+  });
+
+  ['jname','jphone'].forEach(function(id){ var el=document.getElementById(id);
+    el.addEventListener('input',function(){ if(id==='jphone') el.value=el.value.replace(/\D/g,''); showErr(id.slice(1),false); }); });
+  document.getElementById('jconsent').addEventListener('change',function(){ if(this.checked) document.getElementById('err-consent').classList.remove('show'); });
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault(); var ok=true;
+    if(!chosenRole){ document.getElementById('err-role').classList.add('show'); ok=false; }
+    if(!document.getElementById('jname').value.trim()){ showErr('name',true); ok=false; } else showErr('name',false);
+    if(document.getElementById('jphone').value.replace(/\D/g,'').length<9){ showErr('phone',true); ok=false; } else showErr('phone',false);
+    if(!document.getElementById('jconsent').checked){ document.getElementById('err-consent').classList.add('show'); ok=false; }
+    if(!ok){ var first=modal.querySelector('.err.show'); if(first){ modal.scrollTop=0; } return; }
+    form.style.display='none'; doneState.classList.add('show');
+  });
+
+  document.querySelectorAll('[data-open]').forEach(function(b){ b.addEventListener('click',function(){ openModal(b.getAttribute('data-open')); }); });
+  closeBtn.addEventListener('click',closeModal); scrim.addEventListener('click',closeModal);
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape' && modal.classList.contains('open')) closeModal();
+    if(e.key==='Tab' && modal.classList.contains('open')){
+      var f=Array.prototype.filter.call(modal.querySelectorAll('button,[href],input,textarea,[tabindex]:not([tabindex="-1"])'),function(el){return el.offsetParent!==null;});
+      if(!f.length) return; var first=f[0],last=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+      else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+    }
+  });
+
+  var hamb=document.getElementById('hamb'), mm=document.getElementById('mobileMenu');
+  function openMobile(){ mm.classList.add('open'); hamb.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+  function closeMobile(){ mm.classList.remove('open'); hamb.setAttribute('aria-expanded','false'); if(!modal.classList.contains('open')) document.body.style.overflow=''; }
+  hamb.addEventListener('click',function(){ mm.classList.contains('open')?closeMobile():openMobile(); });
+  mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',closeMobile); });
+
+  var topnav=document.getElementById('topnav');
+  window.addEventListener('scroll',function(){ topnav.classList.toggle('solid',window.scrollY>40); },{passive:true});
+
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(ents){ ents.forEach(function(en){ if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);} }); },{threshold:.1});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else { document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); }); }
+
+  // ---- PROGRAMS · animated topographic backdrop (Canvas 2D, no deps) ----
+  (function(){
+    var cv=document.getElementById('opsCanvas'); if(!cv) return;
+    var sec=document.getElementById('programs'), ctx=cv.getContext('2d');
+    var RMm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)');
+    var raf=null, w=0, h=0, dpr=Math.min(window.devicePixelRatio||1,1.5), running=false, onScreen=false, LINES=9;
+    function allowed(){ return !(RMm&&RMm.matches) && window.innerWidth>600; }
+    function size(){ var r=sec.getBoundingClientRect(); w=r.width; h=sec.offsetHeight; cv.width=Math.max(1,w*dpr); cv.height=Math.max(1,h*dpr); ctx.setTransform(dpr,0,0,dpr,0,0); }
+    function frame(t){ ctx.clearRect(0,0,w,h);
+      for(var i=0;i<LINES;i++){ var y0=(i+0.5)/LINES*h; ctx.beginPath();
+        for(var x=0;x<=w;x+=14){ var y=y0+Math.sin(x*0.0055+t*0.00035+i*0.7)*24+Math.sin(x*0.0125-t*0.00055+i*1.3)*11; x===0?ctx.moveTo(x,y):ctx.lineTo(x,y); }
+        ctx.strokeStyle='rgba(226,86,42,'+(0.05+0.035*Math.sin(i*0.9+t*0.0004))+')'; ctx.lineWidth=1; ctx.stroke(); }
+      raf=requestAnimationFrame(frame); }
+    function start(){ if(running||!onScreen||!allowed()) return; running=true; size(); cv.classList.add('live'); raf=requestAnimationFrame(frame); }
+    function stop(){ running=false; if(raf)cancelAnimationFrame(raf); raf=null; cv.classList.remove('live'); if(w&&h)ctx.clearRect(0,0,w,h); }
+    if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ es.forEach(function(e){ onScreen=e.isIntersecting; onScreen?start():stop(); }); },{threshold:0}).observe(sec); }
+    else { onScreen=true; start(); }
+    window.addEventListener('resize',function(){ if(running) size(); },{passive:true});
+    if(RMm&&RMm.addEventListener) RMm.addEventListener('change',function(){ allowed()&&onScreen?start():stop(); });
+  })();
+
+  // ---- PHOTO GALLERY + LIGHTBOX ----
+  var IG={sow:'https://www.instagram.com/sonsofwar.ua',cen:'https://www.instagram.com/centuria_zhytomyr_teren',ucf:'https://www.instagram.com/urban.chase.firm',vet:'https://www.instagram.com/veterans_corps_zhytomyr',rukh:'https://www.instagram.com/rukh_competition'};
+  var IGN={sow:'@sonsofwar.ua',cen:'@centuria_zhytomyr_teren',ucf:'@urban.chase.firm',vet:'@veterans_corps_zhytomyr',rukh:'@rukh_competition'};
+  var PHOTOS=[
+   {f:'p02',c:'Сектор — прапор та фаєри',a:'Великий прапор України, вогонь та натовп уболівальників на секторі',ig:'ucf'},
+   {f:'p14',c:'Polissya — підтримка на секторі',a:'Сектор із зеленими прапорами та фаєрами Polissya',ig:'ucf'},
+   {f:'p03',c:'Сектор — єдність уболівальників',a:'Уболівальники разом із димовими шашками на секторі',ig:'ucf'},
+   {f:'p01',c:'Акція за полонених і зниклих безвісти',a:'Учасники з банерами на акції підтримки полонених і зниклих безвісти',ig:'sow'},
+   {f:'p05',c:'ММА — спаринг у клітці',a:'Спаринг з ММА у клітці',ig:'cen'},
+   {f:'p30',c:'Бокс — робота на залі (PHENIX)',a:'Тренування з боксу у залі PHENIX',ig:'cen'},
+   {f:'p29',c:'Боротьба на килимі',a:'Тренування з боротьби на килимі',ig:'cen'},
+   {f:'p26',c:'Вогнева підготовка',a:'Стрільба зі зброї під час вогневої підготовки',ig:'cen'},
+   {f:'p31',c:'Ножовий бій — відпрацювання технік',a:'Тренування з ножового бою на свіжому повітрі',ig:'cen'},
+   {f:'p12',c:'Стрільба з лука — «РУХ»',a:'Стрільба з лука на змаганнях РУХ',ig:'rukh'},
+   {f:'p40',c:'Тренувальний простір — зал',a:'Спортивний зал із гантелями',ig:'cen'},
+   {f:'p15',c:'Польовий вихід — збір у лісі',a:'Учасники на польовому виході в лісі',ig:'cen'},
+   {f:'p06',c:'Збори на свіжому повітрі',a:'Збори учасників під навісом на свіжому повітрі',ig:'cen'},
+   {f:'p28',c:'Топографія та планування',a:'Заняття з топографії та роботи з картою',ig:'cen'},
+   {f:'p22',c:'БПЛА / НРК — підготовка операторів',a:'Підготовка операторів безпілотників',ig:'cen'},
+   {f:'p11',c:'Військово-технологічний спорт — VR',a:'Військово-технологічний спорт із VR-гарнітурою',ig:'rukh'},
+   {f:'p25',c:'Симулятори та технологічний спорт',a:'Робота на симуляторах та екранах',ig:'rukh'},
+   {f:'p24',c:'Кіберспорт та дозвілля',a:'Кіберспорт — дозвілля спільноти',ig:'cen'},
+   {f:'p04',c:'Форум спільноти',a:'Велика аудиторія у залі під час форуму',ig:'sow'},
+   {f:'p16',c:'Просвітницька лекція',a:'Просвітницька лекція для аудиторії',ig:'cen'},
+   {f:'p17',c:'Заняття для молоді',a:'Молодь за партами на занятті',ig:'cen'},
+   {f:'p18',c:'Гутірка з аудиторією',a:'Інструктор проводить гутірку перед аудиторією',ig:'cen'},
+   {f:'p19',c:'Навчання просто неба',a:'Навчання учасників на відкритому повітрі',ig:'cen'},
+   {f:'p20',c:'Семінар — критичне мислення',a:'Семінар у світлій аудиторії',ig:'cen'},
+   {f:'p21',c:'Воркшоп у малих групах',a:'Робота у малих групах за столами',ig:'cen'},
+   {f:'p27',c:'Тактичний теоретичний блок',a:'Учасники у формі на теоретичному занятті',ig:'cen'},
+   {f:'p07',c:'Ветеранський форум — спільне фото',a:'Спільне фото учасників ветеранського форуму на сцені',ig:'vet'},
+   {f:'p08',c:'Співпраця з Мінветеранів',a:'Захід Мінветеранів — вручення відзнак',ig:'vet'},
+   {f:'p09',c:'Команда на ветеранському заході',a:'Учасники на заході Ветеранського корпусу',ig:'vet'},
+   {f:'p23',c:'Випуск курсу — Centuria Berdychiv',a:'Молодь із сертифікатами Centuria Berdychiv',ig:'cen'},
+   {f:'p13',c:'Культурно-патріотична програма',a:'Виступ у козацькому строї на сцені',ig:'sow'},
+   {f:'p10',c:'Нагороди змагань «РУХ»',a:'Медалі змагань РУХ крупним планом',ig:'rukh'},
+   {f:'p34',c:'Керівник напрямку',a:'Керівник напрямку ГО «Сини Війни»',ig:'sow'},
+   {f:'p33',c:'Інструктор',a:'Інструктор команди',ig:'cen'},
+   {f:'p35',c:'Координатор',a:'Координатор команди',ig:'sow'},
+   {f:'p32',c:'Учасник команди',a:'Учасник команди «Сини Війни»',ig:'cen'},
+   {f:'p36',c:'Майбутній осередок — простір',a:'Приміщення майбутнього осередку з арковими вікнами',ig:'sow'},
+   {f:'p37',c:'Ремонт приміщення',a:'Ремонт приміщення майбутнього осередку',ig:'sow'},
+   {f:'p38',c:'Підготовка нового простору',a:'Підготовлене приміщення під осередок',ig:'sow'},
+   {f:'p39',c:'Площа під осередок',a:'Велике приміщення під майбутній осередок',ig:'sow'},
+   {f:'p41',c:'«Донат з кожного чека» — партнерські локації',a:'Інтер’єр партнерського закладу',ig:'sow'},
+   {f:'p42',c:'Партнерська програма — бізнес-спільнота',a:'Відвідувачі партнерського закладу',ig:'sow'},
+   {f:'p43',c:'Спільнота та підтримка партнерів',a:'Спільнота у партнерському закладі',ig:'sow'},
+   {f:'p44',c:'Те, заради чого працюємо',a:'Прапор України на тлі неба',ig:'sow'}
+  ];
+  var GAL_PER_PAGE=12, galPage=0;
+  var grid=document.getElementById('photogrid'), pager=document.getElementById('gpager');
+  var GAL_PAGES=Math.ceil(PHOTOS.length/GAL_PER_PAGE);
+  function renderPager(){
+    if(!pager||GAL_PAGES<2){ if(pager) pager.style.display='none'; return; }
+    pager.innerHTML='';
+    function mk(label,target,o){ var btn=document.createElement('button'); btn.type='button';
+      btn.className='gpg'+(o&&o.cur?' cur':'')+(o&&o.nav?' nav':''); btn.textContent=label;
+      if(o&&o.cur) btn.setAttribute('aria-current','true');
+      if(o&&o.disabled){ btn.disabled=true; }
+      else btn.addEventListener('click',function(){ renderGalleryPage(target);
+        document.getElementById('chronicle').scrollIntoView({block:'start'}); });
+      pager.appendChild(btn); }
+    mk('‹',galPage-1,{nav:true,disabled:galPage===0});
+    for(var n=0;n<GAL_PAGES;n++) mk(String(n+1),n,{cur:n===galPage});
+    mk('›',galPage+1,{nav:true,disabled:galPage===GAL_PAGES-1});
+  }
+  function renderGalleryPage(pg){
+    galPage=Math.max(0,Math.min(pg,GAL_PAGES-1));
+    grid.innerHTML='';
+    var start=galPage*GAL_PER_PAGE, end=Math.min(start+GAL_PER_PAGE,PHOTOS.length);
+    for(var i=start;i<end;i++){ (function(gi){ var p=PHOTOS[gi];
+      var b=document.createElement('button'); b.className='gtile'; b.type='button'; b.setAttribute('aria-label',p.c+' — збільшити');
+      b.innerHTML='<img src="assets/gallery/'+p.f+'-t.jpg" alt="'+p.a+'" loading="lazy" decoding="async" />'+
+        '<span class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>'+
+        '<span class="cap">'+p.c+'</span>';
+      b.addEventListener('click',function(){ openLb(gi); });
+      grid.appendChild(b);
+    })(i); }
+    renderPager();
+  }
+  if(grid){ renderGalleryPage(0); }
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap'),
+      lbSub=document.getElementById('lbSub'),lbIg=document.getElementById('lbIg'),lbCount=document.getElementById('lbCount'),
+      lbIdx=0,lbLast=null;
+  function showLb(i){ lbIdx=(i+PHOTOS.length)%PHOTOS.length; var p=PHOTOS[lbIdx];
+    lbImg.src='assets/gallery/'+p.f+'.jpg'; lbImg.alt=p.a; lbCap.textContent=p.c; lbSub.textContent=IGN[p.ig];
+    lbIg.href=IG[p.ig]; lbCount.textContent=(lbIdx+1)+' / '+PHOTOS.length; }
+  function openLb(i){ lbLast=document.activeElement; showLb(i); lb.classList.add('open'); document.body.style.overflow='hidden';
+    document.getElementById('lbClose').focus(); }
+  function closeLb(){ lb.classList.remove('open'); document.body.style.overflow=''; if(lbLast)lbLast.focus(); }
+  if(lb){
+    document.getElementById('lbClose').addEventListener('click',closeLb);
+    document.getElementById('lbPrev').addEventListener('click',function(){ showLb(lbIdx-1); });
+    document.getElementById('lbNext').addEventListener('click',function(){ showLb(lbIdx+1); });
+    lb.addEventListener('click',function(e){ if(e.target===lb) closeLb(); });
+    document.addEventListener('keydown',function(e){ if(!lb.classList.contains('open')) return;
+      if(e.key==='Escape') closeLb();
+      else if(e.key==='ArrowLeft') showLb(lbIdx-1);
+      else if(e.key==='ArrowRight') showLb(lbIdx+1);
+      else if(e.key==='Tab'){ var f=Array.prototype.filter.call(lb.querySelectorAll('button,[href]'),function(el){return el.offsetParent!==null;});
+        if(!f.length) return; var first=f[0],last=f[f.length-1];
+        if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+        else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();} }
+    });
+  }
+
+  // ---- AUTO CAROUSELS (.phcar — crossfade) ----
+  if(!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)){
+    document.querySelectorAll('.phcar').forEach(function(car, ci){
+      var imgs=car.querySelectorAll('img');
+      if(imgs.length<2) return;
+      var i=0;
+      setTimeout(function(){
+        setInterval(function(){ imgs[i].classList.remove('on'); i=(i+1)%imgs.length; imgs[i].classList.add('on'); }, 4200);
+      }, ci*1600);
+    });
+  }
+})();
+</script>
+</body>
+</html>
