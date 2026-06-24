@@ -172,9 +172,8 @@ header.nav.solid{background:rgba(9,8,7,.95);border-bottom:1px solid var(--line)}
     linear-gradient(var(--ember),var(--ember)) right bottom/13px 2px no-repeat,
     linear-gradient(var(--ember),var(--ember)) right bottom/2px 13px no-repeat}
 .prog:hover::before,.prog:focus-within::before{opacity:.92}
-.prog .top{display:flex;align-items:flex-start;justify-content:space-between}
-.prog .ico-box{width:46px;height:46px;border:1px solid var(--line-2);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--ember);background:rgba(10,9,8,.4)}
-.prog .ico{width:24px;height:24px}
+.prog .top{display:flex;justify-content:flex-end}
+.prog .ico-box{display:none}   /* icons removed */
 .prog .num{font:700 13px/1 var(--mono);color:var(--ghost);letter-spacing:.1em}
 .prog h3{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:19px;letter-spacing:.01em;line-height:1.15;padding-bottom:13px;position:relative;margin-top:2px}
 .prog h3::after{content:"";position:absolute;left:0;bottom:0;width:30px;height:2px;background:var(--ember)}
