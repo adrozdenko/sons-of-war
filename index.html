@@ -327,6 +327,26 @@ header.nav.solid{background:rgba(9,8,7,.95);border-bottom:1px solid var(--line)}
 .partner .pc{font:400 12px/1 var(--mono);color:var(--muted);margin-top:auto;padding-top:6px}
 .partner .pc a{color:var(--muted)}.partner .pc a:hover{color:var(--ember)}
 
+/* MERCH SHOP */
+.merch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.merch-card{display:flex;flex-direction:column;background:var(--bg-1);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.25s var(--ease)}
+.merch-card:hover{border-color:rgba(226,86,42,.4);transform:translateY(-3px)}
+.merch-photo{position:relative;aspect-ratio:4/5;overflow:hidden;background:#0c0a09}
+.merch-photo img{width:100%;height:100%;object-fit:cover;transition:.5s var(--ease)}
+.merch-card:hover .merch-photo img{transform:scale(1.05)}
+.merch-badge{position:absolute;top:12px;left:12px;z-index:2;font:700 9.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;background:var(--ember);color:#fff;padding:6px 10px;border-radius:20px}
+.merch-body{display:flex;flex-direction:column;gap:11px;padding:20px 20px 22px;flex:1}
+.merch-body h3{font-family:var(--display);font-weight:600;text-transform:uppercase;font-size:18px;line-height:1.18}
+.merch-body p{color:var(--muted);font-size:13px;line-height:1.5}
+.merch-specs{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.merch-specs li{font:400 10.5px/1 var(--mono);color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:6px 10px;text-transform:uppercase;letter-spacing:.02em}
+.merch-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:auto;padding-top:8px}
+.merch-price{font-family:var(--display);font-weight:700;font-size:23px;color:var(--ember-2);white-space:nowrap}
+.merch-price small{font-size:12px;color:var(--muted);font-weight:500;margin-left:2px}
+.merch-foot .btn{padding:12px 16px;white-space:nowrap}
+@media(max-width:1000px){.merch-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.merch-grid{grid-template-columns:1fr}}
+
 /* STAKEHOLDER LOGO WALL */
 .logowall{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
 .logocell{position:relative;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent),var(--bg-1);aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;padding:18px;transition:.25s var(--ease)}
@@ -485,6 +505,7 @@ textarea.inp{resize:vertical;min-height:84px}
     <a href="#director">Керівник</a>
     <a href="#projects">Проєкти</a>
     <a href="#support">Партнерам</a>
+    <a href="#merch">Мерч</a>
     <a href="#contacts">Контакти</a>
   </nav>
   <div class="nav-actions">
@@ -502,6 +523,7 @@ textarea.inp{resize:vertical;min-height:84px}
     <a class="mlink" href="#director">Керівник</a>
     <a class="mlink" href="#projects">Проєкти</a>
     <a class="mlink" href="#support">Партнерам</a>
+    <a class="mlink" href="#merch">Мерч</a>
     <a class="mlink" href="#contacts">Контакти</a>
   </div>
   <div class="mactions">
@@ -872,6 +894,80 @@ textarea.inp{resize:vertical;min-height:84px}
   </div>
 </section>
 
+<!-- MERCH SHOP -->
+<section class="sec" id="merch" style="padding-top:20px">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">// Мерч · підтримай рух</span>
+      <h2>Магазин <span class="accent">«Синів Війни»</span></h2>
+      <p>Кожна покупка підтримує ветеранський рух та розвиток осередку. Замовлення оформлюється через Telegram-бот.</p>
+    </div>
+    <div class="merch-grid reveal">
+
+      <article class="merch-card">
+        <div class="merch-photo"><span class="merch-badge">Лімітовано</span><img src="assets/merch/ruh-aromatizer.jpg" alt="Ароматизатор «РУХ» — аромат кави" loading="lazy" /></div>
+        <div class="merch-body">
+          <h3>Ароматизатор «РУХ»</h3>
+          <p>В авто, з лого мультиспортивних змагань «РУХ» для військових та ветеранів.</p>
+          <ul class="merch-specs"><li>Картон 3 мм</li><li>Аромат: кава</li></ul>
+          <div class="merch-foot"><span class="merch-price">250 <small>грн</small></span><a class="btn btn-primary" href="https://t.me/SonsOfWar_UA_bot" target="_blank" rel="noopener noreferrer">Купити →</a></div>
+        </div>
+      </article>
+
+      <article class="merch-card">
+        <div class="merch-photo"><span class="merch-badge">Лімітовано</span><img src="assets/merch/bf-aromatizer.jpg" alt="Ароматизатор БФ «Сини Війни» — аромат бергамоту" loading="lazy" /></div>
+        <div class="merch-body">
+          <h3>Ароматизатор БФ «Сини Війни»</h3>
+          <p>В авто, з символікою Благодійного Фонду «Сини Війни».</p>
+          <ul class="merch-specs"><li>Картон 3 мм</li><li>Аромат: бергамот</li></ul>
+          <div class="merch-foot"><span class="merch-price">250 <small>грн</small></span><a class="btn btn-primary" href="https://t.me/SonsOfWar_UA_bot" target="_blank" rel="noopener noreferrer">Купити →</a></div>
+        </div>
+      </article>
+
+      <article class="merch-card">
+        <div class="merch-photo"><span class="merch-badge">Лімітовано</span><img src="assets/merch/go-aromatizer.jpg" alt="Ароматизатор ГО «Сини Війни» — аромат нова машина" loading="lazy" /></div>
+        <div class="merch-body">
+          <h3>Ароматизатор ГО «Сини Війни»</h3>
+          <p>В авто, з символікою громадської організації «Сини Війни», потовщений картон.</p>
+          <ul class="merch-specs"><li>Картон 3 мм</li><li>Аромат: нова машина</li></ul>
+          <div class="merch-foot"><span class="merch-price">250 <small>грн</small></span><a class="btn btn-primary" href="https://t.me/SonsOfWar_UA_bot" target="_blank" rel="noopener noreferrer">Купити →</a></div>
+        </div>
+      </article>
+
+      <article class="merch-card">
+        <div class="merch-photo"><span class="merch-badge">Лімітовано</span><img src="assets/merch/sticker-sow.jpg" alt="Наліпка на авто «Сини Війни» 15 см" loading="lazy" /></div>
+        <div class="merch-body">
+          <h3>Наліпка на авто «Сини Війни»</h3>
+          <p>Стійка наліпка з символікою «Сини Війни» на авто чи спорядження.</p>
+          <ul class="merch-specs"><li>Діаметр 15 см</li><li>Вініл</li></ul>
+          <div class="merch-foot"><span class="merch-price">250 <small>грн</small></span><a class="btn btn-primary" href="https://t.me/SonsOfWar_UA_bot" target="_blank" rel="noopener noreferrer">Купити →</a></div>
+        </div>
+      </article>
+
+      <article class="merch-card">
+        <div class="merch-photo"><span class="merch-badge">Лімітовано</span><img src="assets/merch/pin-sow.jpg" alt="Металевий пін «Сини Війни» 30 мм" loading="lazy" /></div>
+        <div class="merch-body">
+          <h3>Пін «Сини Війни»</h3>
+          <p>Металевий пін, хімічне травлення. Кріплення — гвоздик з металевим метеликом.</p>
+          <ul class="merch-specs"><li>Метал</li><li>⌀ 30 мм</li></ul>
+          <div class="merch-foot"><span class="merch-price">400 <small>грн</small></span><a class="btn btn-primary" href="https://t.me/SonsOfWar_UA_bot" target="_blank" rel="noopener noreferrer">Купити →</a></div>
+        </div>
+      </article>
+
+      <article class="merch-card">
+        <div class="merch-photo"><span class="merch-badge">Лімітовано</span><img src="assets/merch/chevron-sow.jpg" alt="Шеврон ГО «Сини Війни» 3D ПВХ" loading="lazy" /></div>
+        <div class="merch-body">
+          <h3>Шеврон «Сини Війни»</h3>
+          <p>Об'ємний шеврон ГО «Сини Війни», виконаний 3D з гуми ПВХ.</p>
+          <ul class="merch-specs"><li>3D ПВХ-гума</li><li>На липучці</li></ul>
+          <div class="merch-foot"><span class="merch-price">400 <small>грн</small></span><a class="btn btn-primary" href="https://t.me/SonsOfWar_UA_bot" target="_blank" rel="noopener noreferrer">Купити →</a></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="sec" style="padding-top:10px">
   <div class="wrap">
@@ -931,7 +1027,7 @@ textarea.inp{resize:vertical;min-height:84px}
           <li><button type="button" class="reqcopy" data-copy="UA403220010000026001700004106" title="Скопіювати IBAN"><span class="rk">IBAN</span><b class="ibanval">UA40 3220 0100 0002 6001 7000 04106</b></button></li>
           <li class="reqplain"><span class="rk">Банк</span> <b>Monobank</b></li>
         </ul>
-        <a class="contact-line" href="https://t.me/SonsOfWar_UA_bot" target="_blank" rel="noopener noreferrer" style="margin-top:8px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg> Придбати мерч</a>
+        <a class="contact-line" href="#merch" style="margin-top:8px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg> Придбати мерч</a>
       </div>
     </div>
     <div class="foot-bottom">
