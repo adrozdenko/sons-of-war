@@ -1195,7 +1195,17 @@ textarea.inp{resize:vertical;min-height:84px}
   function openMobile(){ mm.classList.add('open'); hamb.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
   function closeMobile(){ mm.classList.remove('open'); hamb.setAttribute('aria-expanded','false'); if(!modal.classList.contains('open')) document.body.style.overflow=''; }
   hamb.addEventListener('click',function(){ mm.classList.contains('open')?closeMobile():openMobile(); });
-  mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',closeMobile); });
+  mm.querySelectorAll('a').forEach(function(a){ a.addEventListener('click',function(e){
+    var href=a.getAttribute('href')||'';
+    if(href.charAt(0)==='#' && href.length>1){
+      var target=document.querySelector(href);
+      if(target){ e.preventDefault(); closeMobile();
+        setTimeout(function(){ var y=target.getBoundingClientRect().top + window.pageYOffset - 90;
+          window.scrollTo({top:y, behavior:'smooth'}); }, 80);
+        return; }
+    }
+    closeMobile();
+  }); });
 
   var topnav=document.getElementById('topnav');
   window.addEventListener('scroll',function(){ topnav.classList.toggle('solid',window.scrollY>40); },{passive:true});
