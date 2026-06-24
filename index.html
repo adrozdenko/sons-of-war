@@ -344,8 +344,14 @@ footer{border-top:1px solid var(--line);padding:66px 0 28px;margin-top:40px;posi
 .footwm{position:absolute;bottom:-3.2vw;left:50%;transform:translateX(-50%);font-family:var(--display);font-weight:700;
   font-size:17vw;line-height:1;color:rgba(245,240,235,.022);text-transform:uppercase;white-space:nowrap;pointer-events:none;z-index:0}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr .85fr 1.1fr;gap:40px;position:relative;z-index:1}
-.req{font:400 12px/1.95 var(--mono);color:var(--muted);letter-spacing:.02em}
-.req b{color:var(--text);font-weight:400}
+.reqs{list-style:none;display:flex;flex-direction:column;gap:9px;font:400 12px/1.5 var(--mono);color:var(--muted);letter-spacing:.02em}
+.reqs .rk{color:var(--faint);transition:color .2s}
+.reqs b{color:var(--text);font-weight:400}
+.reqcopy{display:block;width:100%;text-align:left;background:none;border:0;padding:0;color:inherit;font:inherit;letter-spacing:inherit;cursor:pointer}
+.reqcopy:hover b{color:var(--ember-2)}
+.reqcopy .ibanval{display:block;white-space:nowrap;margin-top:2px}
+.reqcopy.copied .rk{color:var(--ember-2)}
+.reqplain .rk{color:var(--faint)}
 .foot-brand .brand{margin-bottom:18px}
 .foot-brand p{color:var(--muted);max-width:320px;font-size:14.5px}
 .foot-soc{display:flex;gap:10px;margin-top:20px}
@@ -917,12 +923,12 @@ textarea.inp{resize:vertical;min-height:84px}
       </div>
       <div class="foot-col">
         <h4>Реквізити</h4>
-        <p class="req">
-          ГО ЄДРПОУ <b>45681080</b><br>
-          БФ ЄДРПОУ <b>45730838</b><br>
-          IBAN<br><b>UA40 3220 0100<br>0002 6001 7000 04106</b><br>
-          Банк <b>Monobank</b>
-        </p>
+        <ul class="reqs">
+          <li><button type="button" class="reqcopy" data-copy="45681080" title="Скопіювати"><span class="rk">ГО ЄДРПОУ</span> <b>45681080</b></button></li>
+          <li><button type="button" class="reqcopy" data-copy="45730838" title="Скопіювати"><span class="rk">БФ ЄДРПОУ</span> <b>45730838</b></button></li>
+          <li><button type="button" class="reqcopy" data-copy="UA403220010000026001700004106" title="Скопіювати IBAN"><span class="rk">IBAN</span><b class="ibanval">UA40 3220 0100 0002 6001 7000 04106</b></button></li>
+          <li class="reqplain"><span class="rk">Банк</span> <b>Monobank</b></li>
+        </ul>
         <a class="contact-line" href="https://t.me/SonsOfWar_UA_bot" target="_blank" rel="noopener noreferrer" style="margin-top:8px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg> Придбати мерч</a>
       </div>
     </div>
@@ -1093,6 +1099,21 @@ textarea.inp{resize:vertical;min-height:84px}
     var io=new IntersectionObserver(function(ents){ ents.forEach(function(en){ if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);} }); },{threshold:.1});
     document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
   } else { document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); }); }
+
+  // ---- COPY-TO-CLIPBOARD (footer requisites) ----
+  function reqCopyText(t){
+    if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(t).catch(function(){reqLegacyCopy(t);}); }
+    else reqLegacyCopy(t);
+  }
+  function reqLegacyCopy(t){ var ta=document.createElement('textarea'); ta.value=t; ta.style.cssText='position:fixed;top:-999px;opacity:0'; document.body.appendChild(ta); ta.focus(); ta.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(ta); }
+  document.querySelectorAll('.reqcopy').forEach(function(btn){
+    var rk=btn.querySelector('.rk'), orig=rk?rk.textContent:'', tmr=null;
+    btn.addEventListener('click',function(){
+      reqCopyText(btn.getAttribute('data-copy'));
+      btn.classList.add('copied'); if(rk) rk.textContent='✓ Скопійовано';
+      clearTimeout(tmr); tmr=setTimeout(function(){ btn.classList.remove('copied'); if(rk) rk.textContent=orig; },1500);
+    });
+  });
 
   // ---- PHOTO GALLERY + LIGHTBOX ----
   var IG={sow:'https://www.instagram.com/sonsofwar.ua',cen:'https://www.instagram.com/centuria_zhytomyr_teren',ucf:'https://www.instagram.com/urban.chase.firm',vet:'https://www.instagram.com/veterans_corps_zhytomyr',rukh:'https://www.instagram.com/rukh_competition'};
