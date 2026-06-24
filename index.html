@@ -151,25 +151,17 @@ header.nav.solid{background:rgba(9,8,7,.95);border-bottom:1px solid var(--line)}
 .sec-head p{color:var(--muted);margin-top:18px;font-size:16.5px;max-width:640px}
 
 /* PROGRAMS */
-/* PROGRAMS — Operations Board (HUD grid + topo route + animated backdrop) */
-.ops-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:0;transition:opacity .8s ease}
-.ops-canvas.live{opacity:1}
+/* PROGRAMS — HUD grid · corner brackets animate in on hover */
 .programs{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;z-index:1}
 .programs.reveal{opacity:1;transform:none}            /* container stays; panels self-reveal */
-.prog-route{position:absolute;left:-2%;top:-46px;width:104%;height:calc(100% + 92px);z-index:0;pointer-events:none;overflow:visible}
-.prog-route path{fill:none;stroke:var(--ember);stroke-width:1.2;vector-effect:non-scaling-stroke;opacity:.3;
-  stroke-dasharray:2600;stroke-dashoffset:2600;transition:stroke-dashoffset 1.6s var(--ease)}
-.programs.in .prog-route path{stroke-dashoffset:0}
-.programs.in .prog-route path:nth-child(2){transition-delay:.18s}
-.programs.in .prog-route path:nth-child(3){transition-delay:.36s}
 .prog{position:relative;z-index:1;background:rgba(16,14,12,.92);border:1px solid var(--line);border-radius:10px;
   padding:28px 24px 26px;min-height:286px;display:flex;flex-direction:column;gap:14px;overflow:hidden;
   opacity:0;transform:translateY(18px) scale(.985);
   transition:opacity .6s var(--ease),transform .6s var(--ease),border-color .25s var(--ease);transition-delay:var(--d,0ms)}
 .programs.in .prog{opacity:1;transform:none}
 .prog:hover,.prog:focus-within{border-color:rgba(226,86,42,.4)}
-/* HUD corner brackets */
-.prog::before{content:"";position:absolute;inset:9px;pointer-events:none;opacity:.4;transition:opacity .25s var(--ease);
+/* HUD corner brackets — hidden by default, animate in on hover */
+.prog::before{content:"";position:absolute;inset:9px;pointer-events:none;opacity:0;transition:opacity .3s var(--ease);
   background:
     linear-gradient(var(--ember),var(--ember)) left top/13px 2px no-repeat,
     linear-gradient(var(--ember),var(--ember)) left top/2px 13px no-repeat,
@@ -180,11 +172,6 @@ header.nav.solid{background:rgba(9,8,7,.95);border-bottom:1px solid var(--line)}
     linear-gradient(var(--ember),var(--ember)) right bottom/13px 2px no-repeat,
     linear-gradient(var(--ember),var(--ember)) right bottom/2px 13px no-repeat}
 .prog:hover::before,.prog:focus-within::before{opacity:.92}
-/* one-shot scan-line on reveal */
-.prog::after{content:"";position:absolute;left:0;right:0;top:0;height:42%;pointer-events:none;opacity:0;transform:translateY(-110%);
-  background:linear-gradient(180deg,transparent,rgba(240,101,58,.16) 60%,rgba(240,101,58,.55));mix-blend-mode:screen}
-.programs.in .prog::after{animation:scan 1.05s var(--ease) forwards;animation-delay:calc(var(--d,0ms) + .12s)}
-@keyframes scan{0%{opacity:0;transform:translateY(-70%)}12%{opacity:1}100%{opacity:0;transform:translateY(255%)}}
 .prog .top{display:flex;align-items:flex-start;justify-content:space-between}
 .prog .ico-box{width:46px;height:46px;border:1px solid var(--line-2);border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--ember);background:rgba(10,9,8,.4)}
 .prog .ico{width:24px;height:24px}
@@ -589,8 +576,7 @@ textarea.inp{resize:vertical;min-height:84px}
 </section>
 
 <!-- PROGRAMS -->
-<section class="sec" id="programs" style="padding-top:20px;overflow:hidden">
-  <canvas class="ops-canvas" id="opsCanvas" aria-hidden="true"></canvas>
+<section class="sec" id="programs" style="padding-top:20px">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">// Напрямки діяльності</span>
@@ -598,11 +584,6 @@ textarea.inp{resize:vertical;min-height:84px}
       <p>Єдине середовище дисципліни, сили та відповідальності — від виховання молоді до повернення ветеранів до активного життя.</p>
     </div>
     <div class="programs reveal" role="list">
-      <svg class="prog-route" viewBox="0 0 1200 700" preserveAspectRatio="none" aria-hidden="true">
-        <path d="M-20 175 C 210 95, 350 250, 600 165 S 1010 80, 1220 205" />
-        <path d="M-20 385 C 250 325, 430 470, 650 380 S 980 300, 1220 415" />
-        <path d="M-20 565 C 180 520, 390 605, 600 540 S 1010 470, 1220 560" />
-      </svg>
       <article class="prog" role="listitem" style="--d:0ms">
         <div class="top"><span class="ico-box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l9 4-9 4-9-4 9-4zM5 10v5c0 2 3.5 4 7 4s7-2 7-4v-5"/></svg></span><span class="num">01</span></div>
         <h3>Центурія</h3>
@@ -1113,27 +1094,6 @@ textarea.inp{resize:vertical;min-height:84px}
     var io=new IntersectionObserver(function(ents){ ents.forEach(function(en){ if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);} }); },{threshold:.1});
     document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
   } else { document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); }); }
-
-  // ---- PROGRAMS · animated topographic backdrop (Canvas 2D, no deps) ----
-  (function(){
-    var cv=document.getElementById('opsCanvas'); if(!cv) return;
-    var sec=document.getElementById('programs'), ctx=cv.getContext('2d');
-    var RMm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)');
-    var raf=null, w=0, h=0, dpr=Math.min(window.devicePixelRatio||1,1.5), running=false, onScreen=false, LINES=9;
-    function allowed(){ return !(RMm&&RMm.matches) && window.innerWidth>600; }
-    function size(){ var r=sec.getBoundingClientRect(); w=r.width; h=sec.offsetHeight; cv.width=Math.max(1,w*dpr); cv.height=Math.max(1,h*dpr); ctx.setTransform(dpr,0,0,dpr,0,0); }
-    function frame(t){ ctx.clearRect(0,0,w,h);
-      for(var i=0;i<LINES;i++){ var y0=(i+0.5)/LINES*h; ctx.beginPath();
-        for(var x=0;x<=w;x+=14){ var y=y0+Math.sin(x*0.0055+t*0.00035+i*0.7)*24+Math.sin(x*0.0125-t*0.00055+i*1.3)*11; x===0?ctx.moveTo(x,y):ctx.lineTo(x,y); }
-        ctx.strokeStyle='rgba(226,86,42,'+(0.05+0.035*Math.sin(i*0.9+t*0.0004))+')'; ctx.lineWidth=1; ctx.stroke(); }
-      raf=requestAnimationFrame(frame); }
-    function start(){ if(running||!onScreen||!allowed()) return; running=true; size(); cv.classList.add('live'); raf=requestAnimationFrame(frame); }
-    function stop(){ running=false; if(raf)cancelAnimationFrame(raf); raf=null; cv.classList.remove('live'); if(w&&h)ctx.clearRect(0,0,w,h); }
-    if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ es.forEach(function(e){ onScreen=e.isIntersecting; onScreen?start():stop(); }); },{threshold:0}).observe(sec); }
-    else { onScreen=true; start(); }
-    window.addEventListener('resize',function(){ if(running) size(); },{passive:true});
-    if(RMm&&RMm.addEventListener) RMm.addEventListener('change',function(){ allowed()&&onScreen?start():stop(); });
-  })();
 
   // ---- PHOTO GALLERY + LIGHTBOX ----
   var IG={sow:'https://www.instagram.com/sonsofwar.ua',cen:'https://www.instagram.com/centuria_zhytomyr_teren',ucf:'https://www.instagram.com/urban.chase.firm',vet:'https://www.instagram.com/veterans_corps_zhytomyr',rukh:'https://www.instagram.com/rukh_competition'};
