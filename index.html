@@ -338,7 +338,8 @@ header.nav.solid{background:rgba(9,8,7,.95);border-bottom:1px solid var(--line)}
 @media(max-width:1000px){.logowall{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:560px){.logowall{grid-template-columns:1fr}.logocell{aspect-ratio:2/1}
   .logocell img{max-height:118px}.logocell.host img{max-height:130px}.logocell.tile img{max-height:126px}
-  .hero-cta{flex-direction:column;align-items:stretch}.hero-cta .btn{width:100%;justify-content:center}}
+  .hero-cta,.btnrow,.donrow,.ctaband .row{flex-direction:column;align-items:stretch}
+  .hero-cta .btn,.btnrow .btn,.donrow .btn,.ctaband .row .btn{width:100%;justify-content:center}}
 
 /* FOOTER */
 footer{border-top:1px solid var(--line);padding:66px 0 28px;margin-top:40px;position:relative;overflow:hidden}
@@ -692,7 +693,7 @@ textarea.inp{resize:vertical;min-height:84px}
           <p>У 2024 році повернувся до строю. Нині служить Українському народу в <b>125-й окремій важкій механізованій бригаді</b>.</p>
           <p>Саме тому було створено «Сини Війни» — спільноту, де кожен зможе реалізувати себе у важливій справі.</p>
         </div>
-        <div style="margin-top:8px;display:flex;gap:12px;flex-wrap:wrap">
+        <div class="btnrow" style="margin-top:8px;display:flex;gap:12px;flex-wrap:wrap">
           <button class="btn btn-primary" type="button" data-open="join" style="padding:14px 22px">Долучитися до руху →</button>
           <a class="btn" href="https://www.instagram.com/odesa_code_name" target="_blank" rel="noopener noreferrer" style="padding:14px 22px">Особиста сторінка</a>
         </div>
