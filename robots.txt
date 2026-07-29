@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sonsofwar.org.ua/sitemap.xml
